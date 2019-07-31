@@ -1,0 +1,8 @@
+C:\Users\b.khodakarami\source\repos\Sale.Domain\bin\Debug\Sale.Domain.dll
+C:\Users\b.khodakarami\source\repos\Sale.Domain\bin\Debug\Sale.Domain.pdb
+C:\Users\b.khodakarami\source\repos\Sale.Domain\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Users\b.khodakarami\source\repos\Sale.Domain\obj\Debug\Sale.Domain.csprojAssemblyReference.cache
+C:\Users\b.khodakarami\source\repos\Sale.Domain\obj\Debug\Sale.Domain.csproj.CoreCompileInputs.cache
+C:\Users\b.khodakarami\source\repos\Sale.Domain\obj\Debug\Sale.Domain.csproj.CopyComplete
+C:\Users\b.khodakarami\source\repos\Sale.Domain\obj\Debug\Sale.Domain.dll
+C:\Users\b.khodakarami\source\repos\Sale.Domain\obj\Debug\Sale.Domain.pdb

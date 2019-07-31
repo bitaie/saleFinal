@@ -1,0 +1,97 @@
+﻿@model Sale.Domain.Invoices.Invoice
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+    <h2> Invoice Details</h2>
+
+<div>
+   
+    <hr />
+    <dl class="dl-horizontal">
+        @*<dt>
+                @Html.DisplayNameFor(model => model.CustomerId)
+            </dt>*@
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.FirstName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Customer.FirstName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.LastName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Customer.LastName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalPrice)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TotalPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AddedDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AddedDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedDate)
+        </dd>
+    </dl>
+</div>
+<table class="table itemTable " id="div_to_load_PartialView">
+    <thead>
+        <tr>
+            <th>Name </th>
+            <th>Brand</th>
+
+            <th>Quantity </th>
+
+            <th>Price $ </th>
+
+            <th></th>
+
+        </tr>
+    </thead>
+    <tbody id="Invoice_Items ">
+        @if (Model.Items != null)
+                        {
+        @foreach (var item in Model.Items)
+                            {
+
+
+        <tr class="@item.Product.Id" , name="@item.Product.Id">
+            <td>
+                @Html.DisplayFor(modelItem => item.Product.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product.Brand)
+            </td>
+            <td class="Quantity">
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td class="Price">
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+
+            <td>
+             @* <button type="button" class="btn btn-danger  removeItem">Remove item</button>*@
+
+            </td>
+        </tr>
+                            }
+                        }
+    </tbody>
+</table>
+
+<div>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    <a asp-action="Index">Back to List</a>
+</div>

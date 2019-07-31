@@ -1,0 +1,280 @@
+﻿@model  Sale.FrontEnd.ViewModels.CreateInvoiceViewModel
+
+
+@{
+    ViewData["Title"] = "Edit";
+}
+@TempData["cart"]
+<h2>Create</h2>
+
+<h4>Invoice</h4>
+<hr />
+<div class="container">
+
+    @using (Html.BeginForm("Create", "Invoices", FormMethod.Post))
+    {
+
+
+        <div class="row">
+
+            <div class="form-group col-md-4">
+                <label asp-for="invoice.Customer.FirstName" class="control-label "></label>
+                <input asp-for="invoice.Customer.FirstName " class="form-control  " readonly />
+                <span asp-validation-for="invoice.Customer.FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-4">
+                <label asp-for="invoice.Customer.LastName" class="control-label "></label>
+                <input asp-for="invoice.Customer.LastName" class="form-control " readonly />
+                <span asp-validation-for="invoice.Customer.LastName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group col-md-4">
+                <label asp-for="invoice.ModifiedDate" class="control-label"></label>
+                <input asp-for="invoice.ModifiedDate" class="form-control" readonly />
+                <span asp-validation-for="invoice.ModifiedDate" class="text-danger"></span>
+            </div>
+
+        </div>
+        <div class="row  ">
+
+            <div class="form-group col-md-2 align-self-md-end">
+                <label asp-for="invoice.TotalPrice" class="control-label" style="color:snow"></label>
+                @Html.DropDownList("item.ProductId",
+
+            new SelectList(Model.productsList, "Key",
+            "Value"),
+
+
+            new { @class = "form-control productId productSelectionBox align-self-md-end" }
+
+            )
+
+            </div>
+            <div class="form-group col-md-2">
+                <label asp-for="item.Quantity" class="control-label "></label>
+                <input asp-for="item.Quantity" class="form-control itemQuantity " />
+                <span asp-validation-for="item.Quantity" class="text-danger"></span>
+            </div>
+
+            <div class="form-group col-md-2 align-self-md-end">
+
+                <label asp-for="invoice.TotalPrice" class="control-label" style="color:snow"></label>
+                <button type="button" class="btn btn-info addItem " id="addItem">Add item</button>
+            </div>
+            <div class="form-group col-md-2">
+                <label asp-for="invoice.TotalPrice" class="control-label"></label>
+                <input asp-for="invoice.TotalPrice" class="form-control col-2" readonly />
+                <span asp-validation-for="invoice.TotalPrice" class="text-danger"></span>
+            </div>
+        </div>
+        @*@foreach (var item in Model.items)
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.Product.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantity)
+                </td>
+
+                <td>
+                    <button type="button" class="btn btn-warning">Remove item</button>
+                </td>
+
+            }*@
+
+        @*<div class="form-group">
+                <label asp-for="TotalPrice" class="control-label"></label>
+                <input asp-for="TotalPrice" class="form-control" />
+                <span asp-validation-for="TotalPrice" class="text-danger"></span>
+            </div>*@
+       
+     
+        @*<div id="div_to_load_PartialView">
+
+                @await Html.PartialAsync("_CreateInvoicePartialView")
+
+
+            </div>*@
+        <div id="div_to_load_PartialView1">
+
+            <table class="table itemTable " id="myTable">
+                <thead>
+                    <tr>
+                        <th> @Html.DisplayNameFor(modelItem => Model.item.Product.Name) </th>
+                        <th> @Html.DisplayNameFor(modelItem => Model.item.Product.Brand)</th>
+
+                        <th> @Html.DisplayNameFor(modelItem => Model.item.Quantity) </th>
+
+                        <th> @Html.DisplayNameFor(modelItem => Model.item.Price) $ </th>
+
+                        <th></th>
+
+                    </tr>
+                </thead>
+                <tbody id="Invoice_Items ">
+                    @if (Model.invoice.Items != null)
+                    {
+                        @foreach (var item in Model.invoice.Items)
+                        {
+
+
+                            <tr class="@item.Product.Id" , name="@item.Product.Id" , item="@item.Id">
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Product.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Product.Brand)
+                                </td>
+                                <td class="Quantity">
+                                    @Html.DisplayFor(modelItem => item.Quantity)
+                                </td>
+                                <td class="Price">
+                                    @Html.DisplayFor(modelItem => item.Price)
+                                </td>
+
+                                <td>
+                                    <button type="button" class="btn btn-danger  removeItem">Remove item</button>
+
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Edit" class="btn btn-outline-blue editButton" />
+
+
+        </div>
+
+    }
+</div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+      
+         var customerId =$('.customerId').val();
+ 
+     
+        @TempData["cart"]
+    $('#addItem').on("click", function () {
+        var productID = $('.productId').val();
+        var itemQuantity = $('.itemQuantity').val();
+        var invoiceId = @Model.invoice.Id;
+       // var selectedOption= $(".productSelectionBox option:selected").text();
+        if ($('#myTable tr').hasClass(productID)) {
+            alert("this product has been already chosen, if you want to change amount of this product first remove it ");
+        }
+        else {
+            alert("into additem js");
+            //$(this).
+            $('.itemQuantity').val(0);
+
+            $.ajax({
+
+                url: '@Url.Action("AddItem", "Invoices")',
+                type: "POST",
+
+                data: { productID: productID, itemQuantity: itemQuantity, invoiceId: invoiceId },//this is as per your requirement
+                success: successFunc
+            });
+        }
+        function successFunc(data) {
+         // alert("success ajax")
+
+            var temp = $("#invoice_TotalPrice").val();
+            temp = parseInt(temp);
+           
+            jQuery.each(data.invoice.items, function (index, item) {
+                
+                var addedAmount =parseInt( item.price) * parseInt(item.quantity);
+                $("#invoice_TotalPrice").val(temp + addedAmount);
+                //console.log($('#div_to_load_PartialView').find("tr ."+item.productId).length);
+                   // console.log(item);
+             
+                    $('#myTable').append(
+
+                        '<tr class="table' + ' ' + item.productId+'"' + 'name="' + item.productId +'"'+'item="'+item.id+ '">' +
+                        
+                        '<td   class="'+"editMe"+' ' + "Name" + '">' + item.product.name + "</td>" +
+                        '<td class="' +"editMe"+ ' '+ "Brand"  + '"> ' + item.product.brand + "</td>" +
+                        '<td class="' +"editMe"+ ' '+"Quantity" + '">' + item.quantity + "</td>" +
+                        '<td class="'+"editMe" +' '+ "Price" + '">' + item.price + "</td>" +
+                        "<td>" + ' <button type=' + '"button"' + ' class=' + '"btn btn-danger  removeItem"' + ">Remove item</button>"
+                        + "</td>" +
+                         '<td class="' + "hidden" + '">' + item.productId + "</td>" +
+                        "</tr>"
+                    );
+
+
+            });
+        }
+      
+    });
+    $("#myTable").on("click", "button", function () {
+        var productId = $(this).closest('tr ').attr("name");
+        var itemId = $(this).closest('tr ').attr("item");
+        
+        var button = $(this);
+       
+        //alert(itemId);
+         $.ajax({
+
+            url: '@Url.Action("removeItem", "Invoices")',
+            type: "POST",
+
+            data: {itemId:itemId },//this is as per your requirement
+            success: successFunc
+        });
+        function successFunc(result) {
+            console.log(result == true);
+            if (result == true) {
+              
+                // var productBrand = $(this).closest('tr ').find(".Brand").text();
+                // alert(productBrand);
+                 var productQuantity =button.closest('tr ').find(".Quantity").text();
+      
+
+               // alert(productQuantity);
+                var productPrice = button.closest('tr').find('.Price').text();
+              //  alert(productPrice);
+
+                var temp = $("#invoice_TotalPrice").val();
+               // alert(temp);
+              //  alert(temp);
+                temp = parseInt(temp);
+                var removingAmount = parseInt(productPrice) * parseInt(productQuantity);
+               // alert(removingAmount);
+                $("#invoice_TotalPrice").val(temp - removingAmount);
+               // alert("clicked");
+                button.closest('tr').remove();
+            }
+        }
+
+       $()
+        
+     
+   })
+
+      
+
+    </script>
+
+
+}
+
+
+
+

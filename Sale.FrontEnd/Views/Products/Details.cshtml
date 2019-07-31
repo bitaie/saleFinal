@@ -1,0 +1,43 @@
+﻿@model Sale.Domain.Products.Product
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+    <h2>Product Details</h2>
+
+<div>
+   
+    <hr />
+    <div class="class="container"">
+    <div class="row">
+        <dl >
+
+            <dt class="col-md-4">
+                
+
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+            <dt class="col-md-4">
+                @Html.DisplayNameFor(model => model.Brand)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Brand)
+            </dd>
+            <dt class="col-md-4">
+                @Html.DisplayNameFor(model => model.Price)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Price)
+            </dd>
+        </dl>
+    </div>
+</div>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,9 @@
+C:\Users\b.khodakarami\source\repos\Sale.Contract\bin\Debug\Sale.Contract.dll
+C:\Users\b.khodakarami\source\repos\Sale.Contract\bin\Debug\Sale.Contract.pdb
+C:\Users\b.khodakarami\source\repos\Sale.Contract\bin\Debug\Sale.Domain.dll
+C:\Users\b.khodakarami\source\repos\Sale.Contract\bin\Debug\Sale.Domain.pdb
+C:\Users\b.khodakarami\source\repos\Sale.Contract\obj\Debug\Sale.Contract.csprojAssemblyReference.cache
+C:\Users\b.khodakarami\source\repos\Sale.Contract\obj\Debug\Sale.Contract.csproj.CoreCompileInputs.cache
+C:\Users\b.khodakarami\source\repos\Sale.Contract\obj\Debug\Sale.Contract.csproj.CopyComplete
+C:\Users\b.khodakarami\source\repos\Sale.Contract\obj\Debug\Sale.Contract.dll
+C:\Users\b.khodakarami\source\repos\Sale.Contract\obj\Debug\Sale.Contract.pdb
