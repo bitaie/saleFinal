@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.FrontEnd\\Sale.FrontEnd.csproj": {}
+    "C:\\Users\\b.khodakarami\\Documents\\Projects\\saleFinal\\Sale.FrontEnd\\Sale.FrontEnd.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.Contract\\Sale.Contract.csproj": {
+    "C:\\Users\\b.khodakarami\\Documents\\Projects\\saleFinal\\Sale.Contract\\Sale.Contract.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.Contract\\Sale.Contract.csproj",
+        "projectUniqueName": "C:\\Users\\b.khodakarami\\Documents\\Projects\\saleFinal\\Sale.Contract\\Sale.Contract.csproj",
         "projectName": "Sale.Contract",
-        "projectPath": "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.Contract\\Sale.Contract.csproj",
+        "projectPath": "C:\\Users\\b.khodakarami\\Documents\\Projects\\saleFinal\\Sale.Contract\\Sale.Contract.csproj",
         "frameworks": {
           "net472": {
             "projectReferences": {
-              "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.Domain\\Sale.Domain.csproj": {
-                "projectPath": "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.Domain\\Sale.Domain.csproj"
+              "C:\\Users\\b.khodakarami\\Documents\\Projects\\saleFinal\\Sale.Domain\\Sale.Domain.csproj": {
+                "projectPath": "C:\\Users\\b.khodakarami\\Documents\\Projects\\saleFinal\\Sale.Domain\\Sale.Domain.csproj"
               }
             }
           }
@@ -24,31 +24,31 @@
         "net472": {}
       }
     },
-    "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.Domain\\Sale.Domain.csproj": {
+    "C:\\Users\\b.khodakarami\\Documents\\Projects\\saleFinal\\Sale.Domain\\Sale.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.Domain\\Sale.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\b.khodakarami\\Documents\\Projects\\saleFinal\\Sale.Domain\\Sale.Domain.csproj",
         "projectName": "Sale.Domain",
-        "projectPath": "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.Domain\\Sale.Domain.csproj"
+        "projectPath": "C:\\Users\\b.khodakarami\\Documents\\Projects\\saleFinal\\Sale.Domain\\Sale.Domain.csproj"
       },
       "frameworks": {
         "net472": {}
       }
     },
-    "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.FrontEnd\\Sale.FrontEnd.csproj": {
+    "C:\\Users\\b.khodakarami\\Documents\\Projects\\saleFinal\\Sale.FrontEnd\\Sale.FrontEnd.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.FrontEnd\\Sale.FrontEnd.csproj",
+        "projectUniqueName": "C:\\Users\\b.khodakarami\\Documents\\Projects\\saleFinal\\Sale.FrontEnd\\Sale.FrontEnd.csproj",
         "projectName": "Sale.FrontEnd",
-        "projectPath": "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.FrontEnd\\Sale.FrontEnd.csproj",
-        "packagesPath": "C:\\Users\\Bita\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.FrontEnd\\obj\\",
+        "projectPath": "C:\\Users\\b.khodakarami\\Documents\\Projects\\saleFinal\\Sale.FrontEnd\\Sale.FrontEnd.csproj",
+        "packagesPath": "C:\\Users\\b.khodakarami\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\b.khodakarami\\Documents\\Projects\\saleFinal\\Sale.FrontEnd\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Bita\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\b.khodakarami\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -61,11 +61,11 @@
         "frameworks": {
           "netcoreapp2.1": {
             "projectReferences": {
-              "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.Contract\\Sale.Contract.csproj": {
-                "projectPath": "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.Contract\\Sale.Contract.csproj"
+              "C:\\Users\\b.khodakarami\\Documents\\Projects\\saleFinal\\Sale.Contract\\Sale.Contract.csproj": {
+                "projectPath": "C:\\Users\\b.khodakarami\\Documents\\Projects\\saleFinal\\Sale.Contract\\Sale.Contract.csproj"
               },
-              "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.Domain\\Sale.Domain.csproj": {
-                "projectPath": "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.Domain\\Sale.Domain.csproj"
+              "C:\\Users\\b.khodakarami\\Documents\\Projects\\saleFinal\\Sale.Domain\\Sale.Domain.csproj": {
+                "projectPath": "C:\\Users\\b.khodakarami\\Documents\\Projects\\saleFinal\\Sale.Domain\\Sale.Domain.csproj"
               }
             }
           }
@@ -79,6 +79,10 @@
       "frameworks": {
         "netcoreapp2.1": {
           "dependencies": {
+            "Microsoft.AspNet.Identity.Core": {
+              "target": "Package",
+              "version": "[2.2.2, )"
+            },
             "Microsoft.AspNetCore.App": {
               "suppressParent": "All",
               "target": "Package",

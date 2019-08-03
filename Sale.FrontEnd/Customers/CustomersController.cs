@@ -12,13 +12,16 @@ using System.Net.Http.Headers;
 using System.Text;
 using Sale.Domain.Customers;
 using System.Net;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Sale.FrontEnd.Customers
 {
+    [Authorize]
     public class CustomersController : Controller
     {
         ApiInitializer _initializer = new ApiInitializer();
         // GET: Customers
+        [Authorize]
         public async Task<ActionResult> Index()
         {
             List<Customer> customers = new List<Customer>();

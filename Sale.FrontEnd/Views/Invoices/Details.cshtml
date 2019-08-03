@@ -6,55 +6,66 @@
 
     <h2> جزئیات اطلاعات صورت حساب</h2>
 
-<div>
-   
-    <hr />
-    <dl class="dl-horizontal">
-        @*<dt>
-                @Html.DisplayNameFor(model => model.CustomerId)
-            </dt>*@
-        <dt>
-            @Html.DisplayNameFor(model => model.Customer.FirstName)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Customer.FirstName)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Customer.LastName)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Customer.LastName)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.TotalPrice)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.TotalPrice)
-        </dd>
+    <div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.AddedDate)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.AddedDate)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.ModifiedDate)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.ModifiedDate)
-        </dd>
-    </dl>
-</div>
+        <hr />
+        <dl class="dl-horizontal">
+            <div class="row">
+                <div class="col-md-6">
+                    @Html.DisplayFor(model => model.Customer.FirstName)
+                </div>
+                <div class="col-md-6">
+                    @Html.DisplayNameFor(model => model.Customer.FirstName)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    @Html.DisplayFor(model => model.Customer.LastName)
+                </div>
+                <div class="col-md-6">
+                    @Html.DisplayNameFor(model => model.Customer.LastName)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    @Html.DisplayFor(model => model.TotalPrice)
+                </div>
+                <div class="col-md-6">
+                    @Html.DisplayNameFor(model => model.TotalPrice)
+                </div>
+            </div>  
+            <div class="row">
+                <div class="col-md-6">
+                    @Html.DisplayFor(model => model.AddedDate)
+                </div>
+                <div class="col-md-6">
+                    @Html.DisplayNameFor(model => model.AddedDate)
+                </div>
+            </div>
+           <div class="row">
+                <div class="col-md-6">
+                    @Html.DisplayFor(model => model.ModifiedDate)
+                </div>
+                <div class="col-md-6">
+                    @Html.DisplayNameFor(model => model.ModifiedDate)
+                </div>
+            </div>
+           
+              
+              
+               
+
+            </dl>
+    </div>
 <table class="table itemTable " id="div_to_load_PartialView">
     <thead>
         <tr>
-            <th>Name </th>
-            <th>Brand</th>
+            <th>نام محصول </th>
+            <th>برند محصول</th>
 
-            <th>Quantity </th>
+            <th>تعداد </th>
 
-            <th>Price $ </th>
+            <th>قیمت تومان </th>
 
             
 
@@ -90,5 +101,5 @@
 
 <div>
     @Html.ActionLink("تغییر", "Edit", new { id = Model.Id }) |
-    <a asp-action="Index">بازگشت به لیست صورت حساب هاt</a>
+    <a asp-action="Index">بازگشت به لیست صورت حساب ها</a>
 </div>

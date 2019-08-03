@@ -16,3 +16,12 @@ C:\Users\Bita\Documents\Projects\Sale\Sale.Contract\obj\Debug\Sale.Contract.cspr
 C:\Users\Bita\Documents\Projects\Sale\Sale.Contract\obj\Debug\Sale.Contract.csproj.CopyComplete
 C:\Users\Bita\Documents\Projects\Sale\Sale.Contract\obj\Debug\Sale.Contract.dll
 C:\Users\Bita\Documents\Projects\Sale\Sale.Contract\obj\Debug\Sale.Contract.pdb
+C:\Users\b.khodakarami\Documents\Projects\saleFinal\Sale.Contract\bin\Debug\Sale.Contract.dll
+C:\Users\b.khodakarami\Documents\Projects\saleFinal\Sale.Contract\bin\Debug\Sale.Contract.pdb
+C:\Users\b.khodakarami\Documents\Projects\saleFinal\Sale.Contract\bin\Debug\Sale.Domain.dll
+C:\Users\b.khodakarami\Documents\Projects\saleFinal\Sale.Contract\bin\Debug\Sale.Domain.pdb
+C:\Users\b.khodakarami\Documents\Projects\saleFinal\Sale.Contract\obj\Debug\Sale.Contract.csprojAssemblyReference.cache
+C:\Users\b.khodakarami\Documents\Projects\saleFinal\Sale.Contract\obj\Debug\Sale.Contract.csproj.CoreCompileInputs.cache
+C:\Users\b.khodakarami\Documents\Projects\saleFinal\Sale.Contract\obj\Debug\Sale.Contract.csproj.CopyComplete
+C:\Users\b.khodakarami\Documents\Projects\saleFinal\Sale.Contract\obj\Debug\Sale.Contract.dll
+C:\Users\b.khodakarami\Documents\Projects\saleFinal\Sale.Contract\obj\Debug\Sale.Contract.pdb

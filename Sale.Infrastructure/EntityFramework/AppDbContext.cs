@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+
 using Sale.Domain.Customers;
 using Sale.Domain.Invoices;
 using Sale.Domain.Products;
@@ -29,6 +30,7 @@ namespace Sale.Infrastructure.EntityFramework
         public DbSet<Item> Items { get; set; }
         public DbSet<Invoice> Invoices { get; set; }
         public DbSet<Product> Products { get; set; }
+       
     }
 
 }

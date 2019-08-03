@@ -42,6 +42,7 @@ namespace Sale.FrontEnd.Products
         // GET: Products/Details/5
         public async Task<ActionResult> Details(int id)
         {
+         
             Product Product = new Product();
             HttpClient client = _initializer.initial();
             HttpResponseMessage response = await client.GetAsync("api/Products/" + $" { id} ");

@@ -137,27 +137,27 @@
 
 
 
-          $(document).ready(function () {
+        $(document).ready(function () {
             var invoiceId;
             $('.trigger-btn').on("click", function (event) {
                 invoiceId = $(this).attr('data-whatever');
-               
+
             });
 
 
             $('.deleteButton').on("click", function (event) {
 
-                
-              $.ajax({
 
-            url: '@Url.Action("Delete", "Invoices")',
-            type: "GET",
+                $.ajax({
 
-            data: {id:invoiceId },//this is as per your requirement
-            success: successFunc
-        });
+                    url: '@Url.Action("Delete", "Invoices")',
+                    type: "GET",
+
+                    data: { id: invoiceId },//this is as per your requirement
+                    success: successFunc
+                });
                 function successFunc(response) {
-                     window.location.href ='@Url.Action("Index", "Invoices")';
+                    window.location.href = '@Url.Action("Index", "Invoices")';
                 }
 
 
@@ -173,36 +173,36 @@
 
 
 
-         $('.alert').fadeOut(3000);
+            $('.alert').fadeOut(3000);
             $('#dtBasicExample').DataTable({
- "language": {
+                "language": {
                     "paginate": {
 
-                    "first": "اولین صفحه",
-                    "last": "آخرین صفحه",
+                        "first": "اولین صفحه",
+                        "last": "آخرین صفحه",
 
-                   "next": "صفحه ی بعد",
-                    "previous": "صفحه ی قبل",
+                        "next": "صفحه ی بعد",
+                        "previous": "صفحه ی قبل",
 
 
                     },
 
-       "emptyTable": "داده ای در جدول وجود ندارد.",
-         "search": "جستجو",
+                    "emptyTable": "داده ای در جدول وجود ندارد.",
+                    "search": "جستجو",
                     "info": "نمایش  صفحه _PAGE_ از _PAGES_",
                     "zeroRecords": "نتیجه ای برای این جستجو یافت نشد.",
                     "sLengthMenu": "نمایش _MENU_ در هر صفحه",
                     "sInfoFiltered": "",
 
-                      "sInfoEmpty":""
-             }
+                    "sInfoEmpty": ""
+                }
 
             });
 
-    $('.dataTables_length').addClass('bs-select');
-      
-      
-    
+            $('.dataTables_length').addClass('bs-select');
+
+
+        });
 
 
     </script>

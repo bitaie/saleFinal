@@ -23,7 +23,7 @@ namespace Sale.Domain.BaseEntities
         //    //set { AddedDate = DateTime.Now; }
         //}
         [Display(Name = "تاریخ تغییر")]
-        public DateTime ModifiedDate { get; set; }
+        public DateTime ModifiedDate { get; set; } = DateTime.Now;
         [Display(Name = "تاریخ ایجاد")]
         public DateTime AddedDate { get; set; } = DateTime.Now;
         //public string IPAddress { get; set; }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -34,6 +35,9 @@ namespace UI
 
             services.AddSession();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddAuthentication
+            (CookieAuthenticationDefaults.AuthenticationScheme)
+       .AddCookie();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,11 +53,13 @@ namespace UI
                 app.UseExceptionHandler("/Home/Error");
                 app.UseHsts();
             }
-
+          
             app.UseHttpsRedirection();
             app.UseSession();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+            app.UseAuthentication();
+
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
