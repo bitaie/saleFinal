@@ -4,40 +4,64 @@
     ViewData["Title"] = "Edit";
 }
 
-    <h2>Edit Product</h2>
+    <h2>تغییر محصول</h2>
 
 
 <hr />
 <div class="container">
     <div class="row">
+        @if ((string)TempData["State"] == "Validation Error")
+        {
+            <div class="alert alert-danger alert-dismissible">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>فرمت های زیر مشکل دارند:</strong>
+                @foreach (var error in (List<string>)TempData["errors"])
+                {
+                    <div>@error</div>
+                }
+            </div>
+        }
+        else if ((string)TempData["State"] == "Fail")
+        {
+            <div class="alert alert-danger alert-dismissible">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>عملیات با شکست موجه شد!</strong>
+            </div>
+        }
         <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group col-md-4">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
+                <label asp-for="Price" class="control-label"></label>&nbsp;تومان
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
             </div>
             <div class="form-group col-md-4">
                 <label asp-for="Brand" class="control-label"></label>
                 <input asp-for="Brand" class="form-control" />
                 <span asp-validation-for="Brand" class="text-danger"></span>
             </div>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group col-md-4">
-                <label asp-for="Price" class="control-label"></label>
-                <input asp-for="Price" class="form-control" />
-                <span asp-validation-for="Price" class="text-danger"></span>
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
             </div>
+
+
             <div class="form-group col-md-2">
-                <input type="submit" value="Edit" class="btn btn-blue" />
+                <input type="submit" value="اعمال تغییرات" class="btn btn-blue" style="float:left" />
             </div>
+            <div>
+
+                <a asp-action="Index" class="col-md-2" style="float:right">بازگشت به لیست مشتریان</a>
+            </div>
+
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
 }

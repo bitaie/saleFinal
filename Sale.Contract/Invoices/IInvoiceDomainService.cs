@@ -14,7 +14,7 @@ namespace Sale.Contract.Invoices
     
 
         int CalculateTotalPrice(List<Item> items);
-      
+        object UpdateModifiedDate(int invoiceId);
 
     }
 }

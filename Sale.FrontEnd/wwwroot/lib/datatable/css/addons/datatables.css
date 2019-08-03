@@ -54,11 +54,13 @@ div.dataTables_wrapper div.dataTables_info, div.dataTables_wrapper div.dataTable
 div.dataTables_wrapper div.dataTables_paginate {
   text-align: right;
   margin: 0; }
-  div.dataTables_wrapper div.dataTables_paginate ul.pagination {
-    -webkit-box-pack: end;
-    -webkit-justify-content: flex-end;
-    -ms-flex-pack: end;
-    justify-content: flex-end; }
+    div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+        -webkit-box-pack: end;
+        -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+        justify-content: flex-end;
+    
+    }
     div.dataTables_wrapper div.dataTables_paginate ul.pagination .page-item.active .page-link:focus {
       background-color: #4285f4; }
     div.dataTables_wrapper div.dataTables_paginate ul.pagination .page-item .page-link:focus {
@@ -148,3 +150,26 @@ table.dataTable thead .sorting_desc:after {
 table.dataTable thead .sorting_asc_disabled:before,
 table.dataTable thead .sorting_desc_disabled:after {
   opacity: 0; }
+#dtBasicExample{
+    direction:rtl;
+    text-align:right;
+}
+div#dtBasicExample_paginate {
+    direction: rtl;
+    text-align: right;
+    position: relative;
+    left: 40px;
+}
+.row{
+    position:relative;
+}
+
+div#dtBasicExample_filter {
+    float: right;
+}
+div#dtBasicExample_info {
+    float: left;
+}
+div#dtBasicExample_length {
+    float: left;
+}

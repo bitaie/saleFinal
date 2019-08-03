@@ -30,17 +30,25 @@ namespace Sale.DomainService.Invoices
         public int CalculateTotalPrice(List<Item> items)
         {
             var sum = 0;
-            foreach (var item in items)
+            if (items.Any())
             {
-                var price = item.Price;
-                var quantity = item.Quantity;
-                sum = sum + price * quantity;
+                foreach (var item in items)
+                {
+                    var price = item.Price;
+                    var quantity = item.Quantity;
+                    sum = sum + price * (int)quantity;
 
+                }
             }
             return sum;
         }
        
-
+        public object UpdateModifiedDate(int invoiceId)
+        {
+            Invoice invoice=_invoiceRepository.Get(x => x.Id == invoiceId).SingleOrDefault();
+            invoice.ModifiedDate = DateTime.Now;
+           return  _invoiceRepository.Update(invoice);
+        }
 
 
     }

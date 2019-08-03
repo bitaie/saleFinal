@@ -12,9 +12,12 @@ File: Layout CSS
 @import url("forms.css");
 @import url("tables.css");
 @import url("featured_slide.css");
-
+@font-face {
+    src: url(/fonts/Persian.otf);
+    font-family:persian
+}
 html{overflow-y:scroll;}
-body{margin:0; padding:0; font-size:13px; font-family:Glyphicons Halflings; color:#666666; background-color:#FFFFFF;}
+body{text-align:right;direction:rtl;margin:0; padding:0; font-size:13px; font-family:persian; color:#666666; background-color:#FFFFFF;}
 
 .justify{text-align:justify;}
 .bold{font-weight:bold;}
@@ -150,3 +153,37 @@ div.wrapper h1, div.wrapper h2, div.wrapper h3, div.wrapper h4, div.wrapper h5, 
 
 #copyright{padding:10px 0;}
 #copyright p{margin:0; padding:0;}
+h2{
+    font-family:persian
+}
+div#footer{
+    position:relative
+}
+.box1 {
+    position: relative;
+    left: 530px;
+}
+
+.container{
+    position:relative;
+    direction:rtl;
+    text-align:right;
+}
+.content {
+    position: relative;
+    right:-300px
+}
+.btn, .productSelectionBox, .form-control {
+    font-family: persian;
+}
+.btns {
+    position: relative;
+    right: 20px;
+}
+input.btn.btn-success {
+    position:relative;
+  float:left !important;
+}
+input.btn.btn-success {
+    float: left;
+}

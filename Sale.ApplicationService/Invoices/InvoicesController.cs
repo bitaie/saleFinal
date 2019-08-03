@@ -50,34 +50,30 @@ namespace Sale.ApplicationService.Invoices
         }
 
         //@To Do: Maybe in the future there is a need to make this API
-        //// PUT: api/Invoices/5
-        //[HttpPut("{id}")]
-        //public IActionResult PutInvoice([FromRoute] int id, InsertInvoiceDto insertInvoiceDto)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return BadRequest(ModelState);
-        //    }
+        // PUT: api/Invoices/5
+        [HttpPut]
+        public IActionResult PutInvoice(Invoice invoice)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
 
-        //    if (id != insertInvoiceDto.invoice.Id)
-        //    {
-        //        return BadRequest();
-        //    }
+          
 
-        //    try
-        //    {
-        //        List<Item> items = insertInvoiceDto.items;
-        //        Invoice invoice = insertInvoiceDto.invoice;
+            try
+            {
+                
 
-        //        _invoiceApplicationService.UpdateInvoice(insertInvoiceDto.invoice, insertInvoiceDto.items);
-        //    }
-        //    catch (DbUpdateConcurrencyException)
-        //    {
-        //        return Conflict();
-        //    }
+                _invoiceApplicationService.UpdateInvoice(invoice.Id);
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                return Conflict();
+            }
 
-        //    return NoContent();
-        //}
+            return NoContent();
+        }
 
         // POST: api/Invoices
 

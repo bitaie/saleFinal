@@ -108,6 +108,10 @@ namespace Sale.ApplicationService.Invoices
             invoice.Items = items;
             return invoice;
         }
+        public object UpdateInvoice(int invoiceId)
+        {
+            return _invoiceDomainService.UpdateModifiedDate(invoiceId);
+        }
 
 
 

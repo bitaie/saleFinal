@@ -47,6 +47,7 @@ namespace Sale.ApplicationService
 
             services.AddScoped(typeof(IGenericValidation<>), typeof(GenericValidation<>));
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            services.AddTransient<IGenericValidationService, GenericValidationService>();
             
             services.AddTransient<IProductDomainService, ProductDomainService>();
             services.AddTransient<ICustomerApplicationService, CustomerApplicationService>();

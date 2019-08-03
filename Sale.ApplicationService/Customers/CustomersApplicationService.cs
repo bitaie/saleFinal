@@ -13,7 +13,8 @@ namespace Sale.ApplicationService.Customers
         private readonly ICustomerDomainService _customerDomainService;
         private readonly IGenericRepository<Customer> _customerRepository;
         private static List<string> requiredFields = new List<string>() { "FirstName","LastName","PhoneNumber"}; 
-        private static Dictionary<string,int> limitedFields = new Dictionary<string, int>() { { "FirstName",50 },{ "LastName", 50 },{ "PhoneNumber", 10} }; 
+        private static Dictionary<string,int> limitedFields = new Dictionary<string, int>() { { "FirstName",5 },{ "LastName", 50 },{ "PhoneNumber", 11} };
+        private static string correctPhoneNumberExample = "09123456789";
         public CustomerApplicationService(ICustomerDomainService customerDomainService, IGenericRepository<Customer> customerRepository)
         {
             _customerRepository = customerRepository;
@@ -26,22 +27,25 @@ namespace Sale.ApplicationService.Customers
             try
             {
                 List<string> errors;
-                var customerRequireedFilledErrors = _customerDomainService.CheckCustomerRequiredFieldsFilled(customer, requiredFields);
-              
+                List<string> customerRequireedFilledErrors = new List<string>();
+                 customerRequireedFilledErrors = _customerDomainService
+                    .CheckCustomerRequiredFieldsFilled(customer, requiredFields);
+                List<string> customerFieldsUpperLimitLengthRightErrors = new List<string>();
+                customerFieldsUpperLimitLengthRightErrors = _customerDomainService
+                    .CheckCustomerFieldsUpperLimitLengthRight(customer, limitedFields);
+                List<string> customerPhoneNumberFormatErrors = new List<string>();
+               customerPhoneNumberFormatErrors = _customerDomainService
+                    .CheckPhoneNumberFormat(customer, correctPhoneNumberExample);
 
-                if (customerRequireedFilledErrors.Any() )
+                if (customerRequireedFilledErrors.Any() || customerFieldsUpperLimitLengthRightErrors.Any() || customerPhoneNumberFormatErrors.Any())
 
                 {
-                    errors = customerRequireedFilledErrors;
-                    return errors;
+                   return errors = customerRequireedFilledErrors
+                        .Concat(customerFieldsUpperLimitLengthRightErrors).Concat(customerPhoneNumberFormatErrors).ToList();
 
                 }
-                else
-                {
-                    var customerFieldsUpperLimitLengthRightErrors = _customerDomainService.CheckCustomerFieldsUpperLimitLengthRight(customer, limitedFields);
-
-                    if (customerFieldsUpperLimitLengthRightErrors.Any())
-                        errors = customerRequireedFilledErrors.Concat(customerFieldsUpperLimitLengthRightErrors).ToList();
+               
+                      
                    
                     var IsDuplicateInsertError = _customerDomainService.IsDuplicateInsert(customer);
                     if (IsDuplicateInsertError != null)
@@ -49,8 +53,9 @@ namespace Sale.ApplicationService.Customers
 
                         return IsDuplicateInsertError;
                     }
+                    
                     return _customerRepository.Insert(customer);
-                }
+                
             }
             catch (Exception ex)
             {
@@ -59,16 +64,22 @@ namespace Sale.ApplicationService.Customers
         }
         public object UpdateCustomer(Customer customer)
         {
-            var customerRequireedFilledErrors = _customerDomainService.CheckCustomerRequiredFieldsFilled(customer, requiredFields);
-            var customerFieldsUpperLimitLengthRightErrors = _customerDomainService.CheckCustomerFieldsUpperLimitLengthRight(customer, limitedFields);
+            List<string> errors;
+            List<string> customerRequireedFilledErrors = new List<string>();
+            customerRequireedFilledErrors = _customerDomainService.CheckCustomerRequiredFieldsFilled(customer, requiredFields);
+            List<string> customerFieldsUpperLimitLengthRightErrors = new List<string>();
+             customerFieldsUpperLimitLengthRightErrors = _customerDomainService
+                .CheckCustomerFieldsUpperLimitLengthRight(customer, limitedFields);
+            List<string> customerPhoneNumberFormatErrors = new List<string>();
+            customerPhoneNumberFormatErrors = _customerDomainService
+                 .CheckPhoneNumberFormat(customer, correctPhoneNumberExample);
 
 
-            if (customerRequireedFilledErrors.Any() && customerFieldsUpperLimitLengthRightErrors.Any())
+            if (customerRequireedFilledErrors.Any() || customerFieldsUpperLimitLengthRightErrors.Any() || customerPhoneNumberFormatErrors.Any())
 
             {
-                List<string> errors = customerRequireedFilledErrors.Concat(customerFieldsUpperLimitLengthRightErrors).ToList();
-                return errors;
-
+                return errors = customerRequireedFilledErrors
+                     .Concat(customerFieldsUpperLimitLengthRightErrors).Concat(customerPhoneNumberFormatErrors).ToList();
 
             }
             var IsDuplicateInsertError = _customerDomainService.IsDuplicateInsert(customer);

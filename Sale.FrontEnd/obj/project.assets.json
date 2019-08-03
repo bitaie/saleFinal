@@ -2,6 +2,16 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.1": {
+      "bootstrap/4.3.1": {
+        "type": "package",
+        "dependencies": {
+          "jQuery": "[3.0.0, 4.0.0)",
+          "popper.js": "[1.14.0, 2.0.0)"
+        }
+      },
+      "jQuery/3.0.0": {
+        "type": "package"
+      },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
         "type": "package",
         "dependencies": {
@@ -2785,6 +2795,9 @@
           "lib/netstandard1.6/NuGet.Frameworks.dll": {}
         }
       },
+      "popper.js/1.14.0": {
+        "type": "package"
+      },
       "Remotion.Linq/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -4640,6 +4653,81 @@
     }
   },
   "libraries": {
+    "bootstrap/4.3.1": {
+      "sha512": "lrVBeG2vmfwsHJuwSzeXz+1hPn/374vXDOAusU50vzljEWcFOFtif3wzIJJqfqQRHs2RnY0xttZ0Zv5JX4BFGg==",
+      "type": "package",
+      "path": "bootstrap/4.3.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "bootstrap.4.3.1.nupkg.sha512",
+        "bootstrap.nuspec",
+        "content/Content/bootstrap-grid.css",
+        "content/Content/bootstrap-grid.css.map",
+        "content/Content/bootstrap-grid.min.css",
+        "content/Content/bootstrap-grid.min.css.map",
+        "content/Content/bootstrap-reboot.css",
+        "content/Content/bootstrap-reboot.css.map",
+        "content/Content/bootstrap-reboot.min.css",
+        "content/Content/bootstrap-reboot.min.css.map",
+        "content/Content/bootstrap.css",
+        "content/Content/bootstrap.css.map",
+        "content/Content/bootstrap.min.css",
+        "content/Content/bootstrap.min.css.map",
+        "content/Scripts/bootstrap.bundle.js",
+        "content/Scripts/bootstrap.bundle.js.map",
+        "content/Scripts/bootstrap.bundle.min.js",
+        "content/Scripts/bootstrap.bundle.min.js.map",
+        "content/Scripts/bootstrap.js",
+        "content/Scripts/bootstrap.js.map",
+        "content/Scripts/bootstrap.min.js",
+        "content/Scripts/bootstrap.min.js.map",
+        "contentFiles/Content/bootstrap-grid.css",
+        "contentFiles/Content/bootstrap-grid.css.map",
+        "contentFiles/Content/bootstrap-grid.min.css",
+        "contentFiles/Content/bootstrap-grid.min.css.map",
+        "contentFiles/Content/bootstrap-reboot.css",
+        "contentFiles/Content/bootstrap-reboot.css.map",
+        "contentFiles/Content/bootstrap-reboot.min.css",
+        "contentFiles/Content/bootstrap-reboot.min.css.map",
+        "contentFiles/Content/bootstrap.css",
+        "contentFiles/Content/bootstrap.css.map",
+        "contentFiles/Content/bootstrap.min.css",
+        "contentFiles/Content/bootstrap.min.css.map",
+        "contentFiles/Scripts/bootstrap.bundle.js",
+        "contentFiles/Scripts/bootstrap.bundle.js.map",
+        "contentFiles/Scripts/bootstrap.bundle.min.js",
+        "contentFiles/Scripts/bootstrap.bundle.min.js.map",
+        "contentFiles/Scripts/bootstrap.js",
+        "contentFiles/Scripts/bootstrap.js.map",
+        "contentFiles/Scripts/bootstrap.min.js",
+        "contentFiles/Scripts/bootstrap.min.js.map"
+      ]
+    },
+    "jQuery/3.0.0": {
+      "sha512": "xFfntV19HzCtKdJWOp/XT9PUY3SslokTDDLFJZdBug36j1XVhw1+vPQ/n7Gd5y+jdpesn5B1m1yn1qIUq57jlA==",
+      "type": "package",
+      "path": "jquery/3.0.0",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Content/Scripts/jquery-3.0.0-vsdoc.js",
+        "Content/Scripts/jquery-3.0.0.js",
+        "Content/Scripts/jquery-3.0.0.min.js",
+        "Content/Scripts/jquery-3.0.0.min.map",
+        "Content/Scripts/jquery-3.0.0.slim.js",
+        "Content/Scripts/jquery-3.0.0.slim.min.js",
+        "Content/Scripts/jquery-3.0.0.slim.min.map",
+        "Tools/common.ps1",
+        "Tools/install.ps1",
+        "Tools/jquery-3.0.0.intellisense.js",
+        "Tools/uninstall.ps1",
+        "jquery.3.0.0.nupkg.sha512",
+        "jquery.nuspec"
+      ]
+    },
     "Microsoft.AspNet.WebApi.Client/5.2.6": {
       "sha512": "owAlEIUZXWSnkK8Z1c+zR47A0X6ykF4XjbPok4lQKNuciUfHLGPd6QnI+rt/8KlQ17PmF+I4S3f+m+Qe4IvViw==",
       "type": "package",
@@ -5905,7 +5993,7 @@
       ]
     },
     "Microsoft.CodeAnalysis.Analyzers/1.1.0": {
-      "sha512": "9U88KYpe+sfsKDt6vtmQ/4JCBJpVlDb6xXpdrHGZ7awrObr0r9k8mojAKVshv7MnosNa88vfY/4+b2K6f3W26A==",
+      "sha512": "HS3iRWZKcUw/8eZ/08GXKY2Bn7xNzQPzf8gRPHGSowX7u7XXu9i9YEaBeBNKUXWfI7qjvT2zXtLUvbN0hds8vg==",
       "type": "package",
       "path": "microsoft.codeanalysis.analyzers/1.1.0",
       "hasTools": true,
@@ -7730,6 +7818,43 @@
         "lib/netstandard1.6/NuGet.Frameworks.xml",
         "nuget.frameworks.4.7.0.nupkg.sha512",
         "nuget.frameworks.nuspec"
+      ]
+    },
+    "popper.js/1.14.0": {
+      "sha512": "SPxZdXknelgQ015wey7GMZvsVdt/SyEmHYORhEp5k/uF9MUk9DPtkn+6dR98fud2hVWJjZm9KKr474+r7WQt+A==",
+      "type": "package",
+      "path": "popper.js/1.14.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "content/Scripts/README.md",
+        "content/Scripts/esm/popper-utils.js",
+        "content/Scripts/esm/popper-utils.js.map",
+        "content/Scripts/esm/popper-utils.min.js",
+        "content/Scripts/esm/popper-utils.min.js.map",
+        "content/Scripts/esm/popper.js",
+        "content/Scripts/esm/popper.js.map",
+        "content/Scripts/esm/popper.min.js",
+        "content/Scripts/esm/popper.min.js.map",
+        "content/Scripts/index.d.ts",
+        "content/Scripts/popper-utils.js",
+        "content/Scripts/popper-utils.js.map",
+        "content/Scripts/popper-utils.min.js",
+        "content/Scripts/popper-utils.min.js.map",
+        "content/Scripts/popper.js",
+        "content/Scripts/popper.js.map",
+        "content/Scripts/popper.min.js",
+        "content/Scripts/popper.min.js.map",
+        "content/Scripts/umd/popper-utils.js",
+        "content/Scripts/umd/popper-utils.js.map",
+        "content/Scripts/umd/popper-utils.min.js",
+        "content/Scripts/umd/popper-utils.min.js.map",
+        "content/Scripts/umd/popper.js",
+        "content/Scripts/umd/popper.js.map",
+        "content/Scripts/umd/popper.min.js",
+        "content/Scripts/umd/popper.min.js.map",
+        "popper.js.1.14.0.nupkg.sha512",
+        "popper.js.nuspec"
       ]
     },
     "Remotion.Linq/2.2.0": {
@@ -9705,7 +9830,7 @@
       ]
     },
     "System.Linq.Queryable/4.0.1": {
-      "sha512": "/zCkb2v1CLsdIIDMnRNuxpHFNsA/u0G57SbqC/oTJ4SqLdw/AfdLxOsXVK7WcQVGpR5n5ub9GvYWC6B+qTs8mA==",
+      "sha512": "Yn/WfYe9RoRfmSLvUt2JerP0BTGGykCZkQPgojaxgzF2N0oPo+/AhB8TXOpdCcNlrG3VRtsamtK2uzsp3cqRVw==",
       "type": "package",
       "path": "system.linq.queryable/4.0.1",
       "files": [
@@ -12564,27 +12689,28 @@
       "Microsoft.NETCore.App >= 2.1.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.1.9",
       "Sale.Contract >= 1.0.0",
-      "Sale.Domain >= 1.0.0"
+      "Sale.Domain >= 1.0.0",
+      "bootstrap >= 4.3.1"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\b.khodakarami\\.nuget\\packages\\": {},
+    "C:\\Users\\Bita\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\b.khodakarami\\source\\repos\\Sale.FrontEnd\\Sale.FrontEnd.csproj",
+      "projectUniqueName": "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.FrontEnd\\Sale.FrontEnd.csproj",
       "projectName": "Sale.FrontEnd",
-      "projectPath": "C:\\Users\\b.khodakarami\\source\\repos\\Sale.FrontEnd\\Sale.FrontEnd.csproj",
-      "packagesPath": "C:\\Users\\b.khodakarami\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\b.khodakarami\\source\\repos\\Sale.FrontEnd\\obj\\",
+      "projectPath": "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.FrontEnd\\Sale.FrontEnd.csproj",
+      "packagesPath": "C:\\Users\\Bita\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.FrontEnd\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\b.khodakarami\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Bita\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -12597,11 +12723,11 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\b.khodakarami\\source\\repos\\Sale.Contract\\Sale.Contract.csproj": {
-              "projectPath": "C:\\Users\\b.khodakarami\\source\\repos\\Sale.Contract\\Sale.Contract.csproj"
+            "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.Contract\\Sale.Contract.csproj": {
+              "projectPath": "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.Contract\\Sale.Contract.csproj"
             },
-            "C:\\Users\\b.khodakarami\\source\\repos\\Sale.Domain\\Sale.Domain.csproj": {
-              "projectPath": "C:\\Users\\b.khodakarami\\source\\repos\\Sale.Domain\\Sale.Domain.csproj"
+            "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.Domain\\Sale.Domain.csproj": {
+              "projectPath": "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.Domain\\Sale.Domain.csproj"
             }
           }
         }
@@ -12634,6 +12760,10 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[2.1.9, )"
+          },
+          "bootstrap": {
+            "target": "Package",
+            "version": "[4.3.1, )"
           }
         },
         "imports": [

@@ -20,18 +20,18 @@ namespace Sale.Domain.Customers
        // [MaxLength(50)]
         //[JsonProperty]
         //[DataMember]
-        [Display(Name = "First Name")]
+        [Display(Name = "نام")]
         public string FirstName { get; set; }
         //[Required]
         //[MaxLength(50)]
         //[JsonProperty]
         //[DataMember]
-        [Display(Name = "Last Name")]
+        [Display(Name = "نام خانوادگی")]
         public string LastName { get; set; }
         //[Required]
         ////[JsonProperty]
         //[DataMember]
-
+        [Display(Name = "شماره تلفن")]
         public string PhoneNumber { get; set; }
         public virtual ICollection<Invoice> Invoices { get; set; }
 

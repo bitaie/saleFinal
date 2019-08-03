@@ -4,43 +4,51 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Invoices</h2>
+<h2>لیست صورت حساب های موجود</h2>
 <div class="container">
     @if ((string)TempData["State"] == "Successfully created")
     {
         <div class="alert alert-success alert-dismissible">
             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-            <strong>Success!</strong> Invoice Successfully created
+            <strong>اطلاعات صورت حساب با موفقیت ثبت شد!</strong>
         </div>
     }
     else if ((string)TempData["State"] == "Successfully Edited")
     {
         <div class="alert alert-success alert-dismissible">
             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-            <strong>Success!</strong> Invoice Successfully Edited
+            <strong>اطلاعات صورت حساب با موفقیت ویرایش شد!</strong>
         </div>
     }
     else if ((string)TempData["State"] == "Successfully Deleted")
     {
         <div class="alert alert-success alert-dismissible col">
             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-            <strong>Success!</strong> Invoice Successfully Deleted
+            <strong>صورت حساب با موفقیت حذف گردید!</strong>
         </div>
     }
     else if ((string)TempData["State"] == "Fail")
     {
         <div class="alert alert-danger alert-dismissible">
             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-            <strong>Failed Action!</strong> Invoice Something went wrong
+            <strong>عملیات با شکست موجه شد!</strong>
         </div>
     }
     @*<p>
             <a asp-action="Create">Create New</a>
         </p>*@
 
-    <table class="table">
+    <table class="table" id="dtBasicExample">
         <thead>
             <tr>
+                <th>
+                    شماره ی صورت حساب
+                <th>
+                    @Html.DisplayNameFor(model => model.AddedDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ModifiedDate)
+                </th>
                 <th>
                     @Html.DisplayNameFor(model => model.Customer.FirstName)
                 </th>
@@ -57,12 +65,15 @@
             @foreach (var item in Model)
             {
                 <tr>
-                    @*<td>
-                            @Html.DisplayFor(modelItem => item.AddedDate)
-                        </td>*@
-                    @*<td>
-                            @Html.DisplayFor(modelItem => item.ModifiedDate)
-                        </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AddedDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ModifiedDate)
+                    </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Customer.FirstName)
                     </td>
@@ -73,12 +84,126 @@
                         @Html.DisplayFor(modelItem => item.TotalPrice)
                     </td>
                     <td>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                        @Html.ActionLink("تغییر", "Edit", new { id = item.Id }) |
+                        @Html.ActionLink("جزئیات", "Details", new { id = item.Id }) |
+                        <a href="#myModal" class="trigger-btn" data-toggle="modal" data-whatever="@item.Id">حذف</a>
                     </td>
                 </tr>
             }
         </tbody>
     </table>
 </div>
+
+
+
+
+
+
+
+
+
+<div id="myModal" class="modal fade" tabindex="0">
+    <div class="modal-dialog modal-confirm">
+        <div class="modal-content">
+            <div class="modal-header">
+
+
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>آیا برای حذف مورد انتخابی اطمینان دارید؟</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-info" data-dismiss="modal">بازگشت</button>
+                <button type="button" class="btn btn-danger deleteButton">حذف</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+@section Scripts
+{
+    <script>
+
+
+
+
+
+          $(document).ready(function () {
+            var invoiceId;
+            $('.trigger-btn').on("click", function (event) {
+                invoiceId = $(this).attr('data-whatever');
+               
+            });
+
+
+            $('.deleteButton').on("click", function (event) {
+
+                
+              $.ajax({
+
+            url: '@Url.Action("Delete", "Invoices")',
+            type: "GET",
+
+            data: {id:invoiceId },//this is as per your requirement
+            success: successFunc
+        });
+                function successFunc(response) {
+                     window.location.href ='@Url.Action("Index", "Invoices")';
+                }
+
+
+
+            });
+
+
+
+
+
+
+
+
+
+
+         $('.alert').fadeOut(3000);
+            $('#dtBasicExample').DataTable({
+ "language": {
+                    "paginate": {
+
+                    "first": "اولین صفحه",
+                    "last": "آخرین صفحه",
+
+                   "next": "صفحه ی بعد",
+                    "previous": "صفحه ی قبل",
+
+
+                    },
+
+       "emptyTable": "داده ای در جدول وجود ندارد.",
+         "search": "جستجو",
+                    "info": "نمایش  صفحه _PAGE_ از _PAGES_",
+                    "zeroRecords": "نتیجه ای برای این جستجو یافت نشد.",
+                    "sLengthMenu": "نمایش _MENU_ در هر صفحه",
+                    "sInfoFiltered": "",
+
+                      "sInfoEmpty":""
+             }
+
+            });
+
+    $('.dataTables_length').addClass('bs-select');
+      
+      
+    
+
+
+    </script>
+}

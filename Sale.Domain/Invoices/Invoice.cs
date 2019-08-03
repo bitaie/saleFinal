@@ -15,7 +15,7 @@ namespace Sale.Domain.Invoices
          public virtual ICollection<Item> Items { get; set; }
         public int CustomerId { get; set; }
         public virtual Customer Customer { get; set; }
-        [Display(Name = "Total Price")]
+        [Display(Name = "جمع مبلغ")]
         public int TotalPrice { get; set; }
 
 

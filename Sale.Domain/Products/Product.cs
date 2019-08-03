@@ -12,13 +12,11 @@ namespace Sale.Domain.Products
 {
     public class Product:BaseEntity
     {
-        //public int Id { get; set; }
-        //[MaxLength(50)]
-        //[Required]
+        [Display(Name = "نام محصول")]
         public string Name { get; set; }
-        //[MaxLength(50)]
+        [Display(Name = "برند محصول")]
         public string Brand { get; set; }
-        //[Required]
+        [Display(Name = "قیمت محصول")]
         public int Price { get; set; }
         public virtual ICollection<Item> Items { get; set; }
     }

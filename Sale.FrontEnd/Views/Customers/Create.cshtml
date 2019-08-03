@@ -4,58 +4,81 @@
 //ViewData["Title"] = "Create";
 } 
 
-<h1>Create Customer</h1>
+<h1>ایجاد مشتری جدید</h1>
 
 
-<div class="container">
+<div class="container" style="direction:rtl">
     <div class="row">
-     
-            
-                <form asp-action="Create">
-                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                    <div class="form-group col-md-4">
-                        <label asp-for="FirstName" class="control-label"></label>
-                        <input asp-for="FirstName" class="form-control" />
-                        <span asp-validation-for="FirstName" class="text-danger"></span>
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label asp-for="LastName" class="control-label"></label>
-                        <input asp-for="LastName" class="form-control" />
-                        <span asp-validation-for="LastName" class="text-danger"></span>
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label asp-for="PhoneNumber" class="control-label"></label>
-                        <input asp-for="PhoneNumber" class="form-control" />
-                        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
-                    </div>
-                    @*<div class="form-group">
-                            <label asp-for="Id" class="control-label"></label>
-                            <input asp-for="Id" class="form-control" />
-                            <span asp-validation-for="Id" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="AddedDate" class="control-label"></label>
-                            <input asp-for="AddedDate" class="form-control" />
-                            <span asp-validation-for="AddedDate" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="ModifiedDate" class="control-label"></label>
-                            <input asp-for="ModifiedDate" class="form-control" />
-                            <span asp-validation-for="ModifiedDate" class="text-danger"></span>
-                        </div>*@
-                    <div class="form-group col-md-2">
-                        <input type="submit" value="Create" class="btn btn-success" />
-                    </div>
-                </form>
-       
-        </div>
+
+        @if ((string)TempData["State"] == "Validation Error")
+        {
+            <div class="alert alert-danger alert-dismissible">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>فرمت های زیر مشکل دارند:</strong>
+                @foreach (var error in (List<string>)TempData["errors"])
+                {
+                    <div>@error</div>
+                }
+            </div>
+        }
+        else if ((string)TempData["State"] == "Fail")
+        {
+            <div class="alert alert-danger alert-dismissible">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>عملیات با شکست موجه شد!</strong>
+            </div>
+        }
+        <form asp-action="Create">
+            <div class="form-group col-md-4">
+                <label asp-for="PhoneNumber" class="control-label"></label>
+                <input asp-for="PhoneNumber" class="form-control" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-4">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group col-md-4">
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+
+
+            @*<div class="form-group">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AddedDate" class="control-label"></label>
+                <input asp-for="AddedDate" class="form-control" />
+                <span asp-validation-for="AddedDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ModifiedDate" class="control-label"></label>
+                <input asp-for="ModifiedDate" class="form-control" />
+                <span asp-validation-for="ModifiedDate" class="text-danger"></span>
+            </div>*@
+
+            <div class="form-group col-md-2">
+                <input type="submit" value="ایجاد" class="btn btn-success" style="float:left" />
+            </div>
+            <div>
+
+                <a asp-action="Index" class="col-md-2" style="float:right">بازگشت به لیست مشتریان</a>
+            </div>
+        </form>
+
+    </div>
         </div>
 
 
-        <div>
-            <a asp-action="Index">Back to List</a>
-        </div>
+        
 
         @section Scripts {
+
             @*@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}*@
         }

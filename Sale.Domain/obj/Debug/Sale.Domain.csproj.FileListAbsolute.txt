@@ -6,3 +6,10 @@ C:\Users\b.khodakarami\source\repos\Sale.Domain\obj\Debug\Sale.Domain.csproj.Cor
 C:\Users\b.khodakarami\source\repos\Sale.Domain\obj\Debug\Sale.Domain.csproj.CopyComplete
 C:\Users\b.khodakarami\source\repos\Sale.Domain\obj\Debug\Sale.Domain.dll
 C:\Users\b.khodakarami\source\repos\Sale.Domain\obj\Debug\Sale.Domain.pdb
+C:\Users\Bita\Documents\Projects\Sale\Sale.Domain\bin\Debug\Sale.Domain.dll
+C:\Users\Bita\Documents\Projects\Sale\Sale.Domain\bin\Debug\Sale.Domain.pdb
+C:\Users\Bita\Documents\Projects\Sale\Sale.Domain\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Users\Bita\Documents\Projects\Sale\Sale.Domain\obj\Debug\Sale.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Bita\Documents\Projects\Sale\Sale.Domain\obj\Debug\Sale.Domain.csproj.CopyComplete
+C:\Users\Bita\Documents\Projects\Sale\Sale.Domain\obj\Debug\Sale.Domain.dll
+C:\Users\Bita\Documents\Projects\Sale\Sale.Domain\obj\Debug\Sale.Domain.pdb

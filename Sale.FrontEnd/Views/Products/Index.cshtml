@@ -4,41 +4,41 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Products</h2>
+<h2>لیست محصولات موجود</h2>
 <div class="container">
     @if ((string)TempData["State"] == "Successfully created")
     {
         <div class="alert alert-success alert-dismissible">
             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-            <strong>Success!</strong> Product Successfully created
+            <strong>اطلاعات محصول با موفقیت ثبت شد!</strong> 
         </div>
     }
     else if ((string)TempData["State"] == "Successfully Edited")
     {
         <div class="alert alert-success alert-dismissible">
             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-            <strong>Success!</strong> Product Successfully Edited
+            <strong>اطلاعات محصول با موفقیت ویرایش شد!</strong> 
         </div>
     }
     else if ((string)TempData["State"] == "Successfully Deleted")
     {
         <div class="alert alert-success alert-dismissible">
             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-            <strong>Success!</strong> Product Successfully Deleted
+            <strong>محصول با موفقیت حذف گردید!</strong> 
         </div>
     }
     else if ((string)TempData["State"] == "Fail")
     {
         <div class="alert alert-danger alert-dismissible">
             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-            <strong>Failed Action!</strong> Product Something went wrong
+            <strong>عملیات با شکست موجه شد!</strong> 
         </div>
     }
     <p>
-        <a asp-action="Create">Create New</a>
+        <a asp-action="Create">ایجاد محصول جدید</a>
     </p>
 
-    <table class="table">
+    <table class="table" id="dtBasicExample">
         <thead>
             <tr>
                 <th>
@@ -48,7 +48,7 @@
                     @Html.DisplayNameFor(model => model.Brand)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Price)
+                    @Html.DisplayNameFor(model => model.Price)&nbsp;تومان
                 </th>
                 <th></th>
             </tr>
@@ -67,12 +67,127 @@
                         @Html.DisplayFor(modelItem => item.Price)
                     </td>
                     <td>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                        @Html.ActionLink("تغییر", "Edit", new { id = item.Id }) |
+                        @Html.ActionLink("جزئیات", "Details", new { id = item.Id }) |
+                        <a href="#myModal" class="trigger-btn" data-toggle="modal" data-whatever="@item.Id">حذف</a>
                     </td>
                 </tr>
             }
         </tbody>
     </table>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="myModal" class="modal fade" tabindex="0">
+    <div class="modal-dialog modal-confirm">
+        <div class="modal-content">
+            <div class="modal-header">
+
+
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>آیا برای حذف مورد انتخابی اطمینان دارید؟</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-info" data-dismiss="modal">بازگشت</button>
+                <button type="button" class="btn btn-danger deleteButton">حذف</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+@section Scripts{
+<script>
+
+
+
+
+      $(document).ready(function () {
+            var productId;
+            $('.trigger-btn').on("click", function (event) {
+                productId = $(this).attr('data-whatever');
+               
+            });
+
+
+            $('.deleteButton').on("click", function (event) {
+
+                
+              $.ajax({
+
+            url: '@Url.Action("Delete", "Products")',
+            type: "GET",
+
+            data: {id:productId },//this is as per your requirement
+            success: successFunc
+        });
+                function successFunc(response) {
+                     window.location.href ='@Url.Action("Index", "Products")';
+                }
+
+
+
+            });
+
+
+
+
+
+
+
+
+
+
+
+
+
+    $('.alert').fadeOut(3000);
+         $('#dtBasicExample').DataTable({
+ "language": {
+                    "paginate": {
+
+                    "first": "اولین صفحه",
+                    "last": "آخرین صفحه",
+
+                   "next": "صفحه ی بعد",
+                    "previous": "صفحه ی قبل",
+
+
+                    },
+
+       "emptyTable": "داده ای در جدول وجود ندارد.",
+         "search": "جستجو",
+                    "info": "نمایش  صفحه _PAGE_ از _PAGES_",
+                    "zeroRecords": "نتیجه ای برای این جستجو یافت نشد.",
+                    "sLengthMenu": "نمایش _MENU_ در هر صفحه",
+                    "sInfoFiltered": "",
+
+                      "sInfoEmpty":""
+             }
+
+            });
+
+    $('.dataTables_length').addClass('bs-select');
+
+
+</Script>
+}

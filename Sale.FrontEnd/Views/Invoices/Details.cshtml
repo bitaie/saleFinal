@@ -4,7 +4,7 @@
     ViewData["Title"] = "Details";
 }
 
-    <h2> Invoice Details</h2>
+    <h2> جزئیات اطلاعات صورت حساب</h2>
 
 <div>
    
@@ -56,7 +56,7 @@
 
             <th>Price $ </th>
 
-            <th></th>
+            
 
         </tr>
     </thead>
@@ -81,10 +81,7 @@
                 @Html.DisplayFor(modelItem => item.Price)
             </td>
 
-            <td>
-             @* <button type="button" class="btn btn-danger  removeItem">Remove item</button>*@
-
-            </td>
+            
         </tr>
                             }
                         }
@@ -92,6 +89,6 @@
 </table>
 
 <div>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    <a asp-action="Index">Back to List</a>
+    @Html.ActionLink("تغییر", "Edit", new { id = Model.Id }) |
+    <a asp-action="Index">بازگشت به لیست صورت حساب هاt</a>
 </div>

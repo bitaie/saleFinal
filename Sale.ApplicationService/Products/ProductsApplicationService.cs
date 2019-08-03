@@ -12,8 +12,8 @@ namespace Sale.ApplicationService.Products
     {
         private readonly IProductDomainService _productDomainService;
         private readonly IGenericRepository<Product> _productRepository;
-        private static List<string> requiredFields = new List<string>() { "FirstName", "LastName", "PhoneNumber" };
-        private static Dictionary<string, int> limitedFields = new Dictionary<string, int>() { { "FirstName", 50 }, { "LastName", 50 }, { "PhoneNumber", 10 } };
+        private static List<string> requiredFields = new List<string>() { "Name", "Brand", "Price" };
+        private static Dictionary<string, int> limitedFields = new Dictionary<string, int>() { { "Name", 50 }, { "Brand", 50 }, { "Price", 1000 } };
         public ProductApplicationService(IProductDomainService productDomainService, IGenericRepository<Product> productRepository)
         {
             _productRepository = productRepository;
@@ -24,11 +24,14 @@ namespace Sale.ApplicationService.Products
 
         public object SubmitProduct(Product product)
         {
-            var productRequireedFilledErrors = _productDomainService.CheckProductRequiredFieldsFilled(product, requiredFields);
-            var productFieldsUpperLimitLengthRightErrors = _productDomainService.CheckProductFieldsUpperLimitLengthRight(product, limitedFields);
+            List<string> productRequireedFilledErrors = new List<string>();
+             productRequireedFilledErrors = _productDomainService
+                .CheckProductRequiredFieldsFilled(product, requiredFields);
+            List<string> productFieldsUpperLimitLengthRightErrors = new List<string>();
+             productFieldsUpperLimitLengthRightErrors = _productDomainService.CheckProductFieldsUpperLimitLengthRight(product, limitedFields);
 
 
-            if (productRequireedFilledErrors.Any() && productFieldsUpperLimitLengthRightErrors.Any())
+            if (productRequireedFilledErrors.Any() || productFieldsUpperLimitLengthRightErrors.Any())
 
             {
                 List<string> errors = productRequireedFilledErrors.Concat(productFieldsUpperLimitLengthRightErrors).ToList();
@@ -46,11 +49,15 @@ namespace Sale.ApplicationService.Products
         }
         public object UpdateProduct(Product product)
         {
-            var productRequireedFilledErrors = _productDomainService.CheckProductRequiredFieldsFilled(product, requiredFields);
-            var productFieldsUpperLimitLengthRightErrors = _productDomainService.CheckProductFieldsUpperLimitLengthRight(product, limitedFields);
+            List<string> productRequireedFilledErrors = new List<string>();
+             productRequireedFilledErrors = _productDomainService
+                .CheckProductRequiredFieldsFilled(product, requiredFields);
+            List<string> productFieldsUpperLimitLengthRightErrors = new List<string>();
+             productFieldsUpperLimitLengthRightErrors = _productDomainService
+                .CheckProductFieldsUpperLimitLengthRight(product, limitedFields);
 
 
-            if (productRequireedFilledErrors.Any() && productFieldsUpperLimitLengthRightErrors.Any())
+            if (productRequireedFilledErrors.Any() || productFieldsUpperLimitLengthRightErrors.Any())
 
             {
                 List<string> errors = productRequireedFilledErrors.Concat(productFieldsUpperLimitLengthRightErrors).ToList();

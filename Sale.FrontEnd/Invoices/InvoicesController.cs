@@ -33,9 +33,16 @@ namespace Sale.FrontEnd.Invoices
             {
                 var result = response.Content.ReadAsStringAsync().Result;
                 Invoices = JsonConvert.DeserializeObject<List<Invoice>>(result);
+                return View(Invoices);
             }
 
-            return View(Invoices);
+            
+             else
+            {
+                TempData["State"] = "Fail";
+            }
+
+            return View();
         }
 
         // GET: Invoices/Details/5
@@ -50,13 +57,21 @@ namespace Sale.FrontEnd.Invoices
             {
                 var result = response.Content.ReadAsStringAsync().Result;
                 invoice = JsonConvert.DeserializeObject<Invoice>(result);
-            }
+                    return View(invoice);
+                }
 
-                return View(invoice);
-        }
+              
+                 else
+                {
+                    TempData["State"] = "Fail";
+                }
+
+                return View();
+            }
             catch(Exception ex)
             {
-                return Content(ex.ToString());
+                TempData["State"] = "Fail";
+                return View();
             }
         }
 
@@ -93,7 +108,7 @@ namespace Sale.FrontEnd.Invoices
             }
             else
             {
-                TempData["State"] = "Failed";
+                TempData["State"] = "Fail";
                 return (RedirectToAction(nameof(Index)));
             }
             
@@ -151,7 +166,8 @@ namespace Sale.FrontEnd.Invoices
 
                     else
                     {
-                        TempData["State"] = "Failed";
+                        TempData["State"] = "Fail";
+                        return Json("");
                     }
 
 
@@ -167,7 +183,8 @@ namespace Sale.FrontEnd.Invoices
 
             catch (Exception ex)
             {
-                return Content("d");
+                TempData["State"] = "Fail";
+                return Json("");
             }
 
 
@@ -203,8 +220,39 @@ namespace Sale.FrontEnd.Invoices
         /*[ValidateAntiForgeryToken]*/
         public ActionResult Create()
         {
+            TempData["State"] = "Successfully created";
             return RedirectToAction(nameof(Index));
            
+
+        }
+        public async Task<ActionResult> Edit(Invoice invoice)
+        {
+            HttpClient client = _initializer.initial();
+            //Convert body to Json Type
+            //var test = body.ToDictionary();
+
+           // HttpResponseMessage response = await client.PostAsJsonAsync("api/Invoices/", invoice);
+           HttpResponseMessage response = await client.PutAsJsonAsync("api/Invoices/", invoice);
+
+
+
+            //content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+            //HttpResponseMessage response = await client.PostAsync("api/Customers", content);
+            if (response.IsSuccessStatusCode)
+            {
+                TempData["State"] = "Successfully Edited";
+                return RedirectToAction(nameof(Index));
+            }
+
+
+            else
+            {
+                TempData["State"] = "Fail";
+            }
+
+          
+            return View();
+
 
         }
         [HttpGet]
@@ -236,7 +284,7 @@ namespace Sale.FrontEnd.Invoices
             }
             else
             {
-                TempData["State"] = "Failed";
+                TempData["State"] = "Fail";
                 return (RedirectToAction(nameof(Index)));
             }
 
@@ -313,15 +361,18 @@ namespace Sale.FrontEnd.Invoices
                 if (response.IsSuccessStatusCode)
                 {
                     TempData["State"] = "Successfully Deleted";
-                    return RedirectToAction(nameof(Index));
+                    return Json("");
+                    // return RedirectToAction(nameof(Index));
                 }
-                TempData["State"] = "Failed";
-                return RedirectToAction(nameof(Index));
+                TempData["State"] = "Fail";
+                return Json("");
+                //  return RedirectToAction(nameof(Index));
             }
             catch
             {
-                TempData["State"] = "Failed";
-                return RedirectToAction(nameof(Index));
+                TempData["State"] = "Fail";
+                return Json("");
+                // return RedirectToAction(nameof(Index));
             }
         }
     }

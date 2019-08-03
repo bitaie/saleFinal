@@ -17,5 +17,6 @@ namespace Sale.Contract.Invoices
         IEnumerable<Invoice> GetAllInvoices();
         Invoice GetInvoiceById(int id);
         Item GetItemById(int id);
+        object UpdateInvoice(int invoiceId);
     }
 }

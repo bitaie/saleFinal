@@ -4,40 +4,44 @@
     ViewData["Title"] = "Details";
 }
 
-    <h2>Product Details</h2>
+    <h2>جزئیات محصول</h2>
 
 <div>
    
     <hr />
     <div class="class="container"">
-    <div class="row">
-        <dl >
 
-            <dt class="col-md-4">
-                
+        <dl>
 
-                @Html.DisplayNameFor(model => model.Name)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.Name)
-            </dd>
-            <dt class="col-md-4">
-                @Html.DisplayNameFor(model => model.Brand)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.Brand)
-            </dd>
-            <dt class="col-md-4">
-                @Html.DisplayNameFor(model => model.Price)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.Price)
-            </dd>
-        </dl>
-    </div>
+            <div class="row">
+                <div class="col-md-6">
+                    @Html.DisplayFor(model => model.Name)
+                </div>
+                <div class="col-md-6">
+                    @Html.DisplayNameFor(model => model.Name)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    @Html.DisplayFor(model => model.Brand)
+                </div>
+                <div class="col-md-6">
+                    @Html.DisplayNameFor(model => model.Brand)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    @Html.DisplayFor(model => model.Price)&nbsp;تومان
+                </div>
+                <div class="col-md-6">
+                    @Html.DisplayNameFor(model => model.Price)
+                </div>
+            </div>
+     
+    </dl>
 </div>
 </div>
 <div>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    <a asp-action="Index">Back to List</a>
+    @Html.ActionLink("تغییر", "Edit", new {  id = Model.Id }) |
+    <a asp-action="Index">بازگشت به لیست محصولات</a>
 </div>

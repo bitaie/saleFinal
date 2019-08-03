@@ -13,9 +13,11 @@ namespace Sale.Infrastructure.Validations
     public class GenericValidation<T>:IGenericValidation<T> where T : BaseEntity
     {
         private readonly IGenericRepository<T> _entityRepository;
-        public GenericValidation(IGenericRepository<T> entityRepository)
+        private readonly IGenericValidationService _genericVslidationService;
+        public GenericValidation(IGenericRepository<T> entityRepository, IGenericValidationService genericValidationService)
         {
             _entityRepository = entityRepository;
+            _genericVslidationService = genericValidationService;
         }
 
         public List<string> CheckEntityRequiredFieldsFilled(T obj, List<string> requiredFields)
@@ -33,7 +35,8 @@ namespace Sale.Infrastructure.Validations
 
                         if (propertyValue == null)
                         {
-                            string error = $"{property.Name} must be filled";
+                            string error = $"{_genericVslidationService.GetPropertyDisplayNameIfExists(property)}" +
+                                $" باید دارای مقدار باشد.";
                             errors.Add(error);
                         }
                     }
@@ -57,10 +60,14 @@ namespace Sale.Infrastructure.Validations
                             if (property.Name == limitedField.Key)
                             {
                                 var propertyValue = property.GetValue(obj);
-
-                                if (propertyValue.ToString().Length >= limitedField.Value)
+                                if (propertyValue != null)
                                 {
-                                    errors.Add($"{propertyValue} must be under {limitedField.Value}");
+
+                                    if (propertyValue.ToString().Length > limitedField.Value)
+                                    {
+                                        errors.Add($"طول {_genericVslidationService.GetPropertyDisplayNameIfExists(property)} " +
+                                            $"دارای محدودیت تعداد {limitedField.Value} کاراکتر است.");
+                                    }
                                 }
                             }
                         }
@@ -76,11 +83,16 @@ namespace Sale.Infrastructure.Validations
         {
             try
             {
-                PropertyInfo[] properties = typeof(T).GetProperties(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.DeclaredOnly);
+                PropertyInfo[] properties = typeof(T).GetProperties(System.Reflection.BindingFlags.Public 
+                    | System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.DeclaredOnly);
 
                 string error = null;
                 var isSame = true;
                 List<T> entitiesInDb = _entityRepository.GetAll().ToList();
+                if ( ! entitiesInDb.Any())
+                {
+                    isSame = false;
+                }
                 foreach (var entityInDb in entitiesInDb)
                 {
                     //if all properties except id are same, it means the customer is already in database 
@@ -91,23 +103,33 @@ namespace Sale.Infrastructure.Validations
                        // var test1 = property.PropertyType.Name != typeof(ICollection<>).Name;
 
 
-                        if (property.PropertyType.Name != typeof(BaseEntity).Name && property.PropertyType.Name != typeof(ICollection<>).Name && ! property.Name.EndsWith("Id")) {
+                        if (property.PropertyType.Name != typeof(BaseEntity).Name && 
+                            property.PropertyType.Name != typeof(ICollection<>).Name &&
+                            ! property.Name.EndsWith("Id")) {
 
-
-                            if (property.GetValue(entityInDb).ToString() != property.GetValue(obj).ToString())
+                            if (property.GetValue(obj) == null)
                             {
                                 isSame = false;
                             }
+                            else
+                            {
+                                if (property.GetValue(entityInDb).ToString() != property.GetValue(obj).ToString())
+                                {
+                                    isSame = false;
+                                }
+                            }
+                            }
+
                         }
                        
                     }
-                    if (isSame == true)
+                    if (isSame == true )
                     {
 
-                        error = "This customer exists!";
+                        error = "داده تکراری است!";
 
                     }
-                }
+                
                 return error;
             }
             catch(Exception ex)

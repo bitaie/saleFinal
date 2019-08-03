@@ -13,9 +13,9 @@ namespace Sale.Contract.Customers
         string IsDuplicateInsert(Customer customer);
         List<string> CheckCustomerRequiredFieldsFilled(Customer customer, List<string> requiredFields);
         List<string> CheckCustomerFieldsUpperLimitLengthRight(Customer customer, Dictionary<string, int> limitedFields);
-       //bool CheckCustomerFieldsHaveCorrectFormat(Customer customer);
+        //bool CheckCustomerFieldsHaveCorrectFormat(Customer customer);
 
-
+        List<string> CheckPhoneNumberFormat(Customer customer, string correctPhoneNumberExample);
 
 
     }

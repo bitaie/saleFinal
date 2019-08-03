@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Common\IGenericRepository.cs" />
     <Compile Include="Common\IGenericValidation.cs" />
+    <Compile Include="Common\IGenericValidationService.cs" />
     <Compile Include="Customers\ICustomerApplicationService.cs" />
     <Compile Include="Customers\ICustomerDomainService.cs" />
     <Compile Include="Invoices\IInvoiceControllerService.cs" />

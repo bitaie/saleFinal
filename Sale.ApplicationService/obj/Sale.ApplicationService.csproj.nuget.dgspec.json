@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\b.khodakarami\\source\\repos\\Sale.ApplicationService\\Sale.ApplicationService.csproj": {}
+    "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.ApplicationService\\Sale.ApplicationService.csproj": {}
   },
   "projects": {
-    "C:\\Users\\b.khodakarami\\source\\repos\\Sale.ApplicationService\\Sale.ApplicationService.csproj": {
+    "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.ApplicationService\\Sale.ApplicationService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\b.khodakarami\\source\\repos\\Sale.ApplicationService\\Sale.ApplicationService.csproj",
+        "projectUniqueName": "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.ApplicationService\\Sale.ApplicationService.csproj",
         "projectName": "Sale.ApplicationService",
-        "projectPath": "C:\\Users\\b.khodakarami\\source\\repos\\Sale.ApplicationService\\Sale.ApplicationService.csproj",
-        "packagesPath": "C:\\Users\\b.khodakarami\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\b.khodakarami\\source\\repos\\Sale.ApplicationService\\obj\\",
+        "projectPath": "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.ApplicationService\\Sale.ApplicationService.csproj",
+        "packagesPath": "C:\\Users\\Bita\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.ApplicationService\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\b.khodakarami\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Bita\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -30,17 +30,17 @@
         "frameworks": {
           "netcoreapp2.1": {
             "projectReferences": {
-              "C:\\Users\\b.khodakarami\\source\\repos\\Sale.Contract\\Sale.Contract.csproj": {
-                "projectPath": "C:\\Users\\b.khodakarami\\source\\repos\\Sale.Contract\\Sale.Contract.csproj"
+              "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.Contract\\Sale.Contract.csproj": {
+                "projectPath": "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.Contract\\Sale.Contract.csproj"
               },
-              "C:\\Users\\b.khodakarami\\source\\repos\\Sale.DomainService\\Sale.DomainService.csproj": {
-                "projectPath": "C:\\Users\\b.khodakarami\\source\\repos\\Sale.DomainService\\Sale.DomainService.csproj"
+              "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.DomainService\\Sale.DomainService.csproj": {
+                "projectPath": "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.DomainService\\Sale.DomainService.csproj"
               },
-              "C:\\Users\\b.khodakarami\\source\\repos\\Sale.Domain\\Sale.Domain.csproj": {
-                "projectPath": "C:\\Users\\b.khodakarami\\source\\repos\\Sale.Domain\\Sale.Domain.csproj"
+              "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.Domain\\Sale.Domain.csproj": {
+                "projectPath": "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.Domain\\Sale.Domain.csproj"
               },
-              "C:\\Users\\b.khodakarami\\source\\repos\\Sale.Infrastructure\\Sale.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\b.khodakarami\\source\\repos\\Sale.Infrastructure\\Sale.Infrastructure.csproj"
+              "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.Infrastructure\\Sale.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.Infrastructure\\Sale.Infrastructure.csproj"
               }
             }
           }
@@ -83,17 +83,17 @@
         }
       }
     },
-    "C:\\Users\\b.khodakarami\\source\\repos\\Sale.Contract\\Sale.Contract.csproj": {
+    "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.Contract\\Sale.Contract.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\b.khodakarami\\source\\repos\\Sale.Contract\\Sale.Contract.csproj",
+        "projectUniqueName": "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.Contract\\Sale.Contract.csproj",
         "projectName": "Sale.Contract",
-        "projectPath": "C:\\Users\\b.khodakarami\\source\\repos\\Sale.Contract\\Sale.Contract.csproj",
+        "projectPath": "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.Contract\\Sale.Contract.csproj",
         "frameworks": {
           "net472": {
             "projectReferences": {
-              "C:\\Users\\b.khodakarami\\source\\repos\\Sale.Domain\\Sale.Domain.csproj": {
-                "projectPath": "C:\\Users\\b.khodakarami\\source\\repos\\Sale.Domain\\Sale.Domain.csproj"
+              "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.Domain\\Sale.Domain.csproj": {
+                "projectPath": "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.Domain\\Sale.Domain.csproj"
               }
             }
           }
@@ -103,23 +103,23 @@
         "net472": {}
       }
     },
-    "C:\\Users\\b.khodakarami\\source\\repos\\Sale.DomainService\\Sale.DomainService.csproj": {
+    "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.DomainService\\Sale.DomainService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\b.khodakarami\\source\\repos\\Sale.DomainService\\Sale.DomainService.csproj",
+        "projectUniqueName": "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.DomainService\\Sale.DomainService.csproj",
         "projectName": "Sale.DomainService",
-        "projectPath": "C:\\Users\\b.khodakarami\\source\\repos\\Sale.DomainService\\Sale.DomainService.csproj",
+        "projectPath": "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.DomainService\\Sale.DomainService.csproj",
         "frameworks": {
           "net472": {
             "projectReferences": {
-              "C:\\Users\\b.khodakarami\\source\\repos\\Sale.Contract\\Sale.Contract.csproj": {
-                "projectPath": "C:\\Users\\b.khodakarami\\source\\repos\\Sale.Contract\\Sale.Contract.csproj"
+              "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.Contract\\Sale.Contract.csproj": {
+                "projectPath": "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.Contract\\Sale.Contract.csproj"
               },
-              "C:\\Users\\b.khodakarami\\source\\repos\\Sale.Domain\\Sale.Domain.csproj": {
-                "projectPath": "C:\\Users\\b.khodakarami\\source\\repos\\Sale.Domain\\Sale.Domain.csproj"
+              "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.Domain\\Sale.Domain.csproj": {
+                "projectPath": "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.Domain\\Sale.Domain.csproj"
               },
-              "C:\\Users\\b.khodakarami\\source\\repos\\Sale.Infrastructure\\Sale.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\b.khodakarami\\source\\repos\\Sale.Infrastructure\\Sale.Infrastructure.csproj"
+              "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.Infrastructure\\Sale.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.Infrastructure\\Sale.Infrastructure.csproj"
               }
             }
           }
@@ -129,31 +129,31 @@
         "net472": {}
       }
     },
-    "C:\\Users\\b.khodakarami\\source\\repos\\Sale.Domain\\Sale.Domain.csproj": {
+    "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.Domain\\Sale.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\b.khodakarami\\source\\repos\\Sale.Domain\\Sale.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.Domain\\Sale.Domain.csproj",
         "projectName": "Sale.Domain",
-        "projectPath": "C:\\Users\\b.khodakarami\\source\\repos\\Sale.Domain\\Sale.Domain.csproj"
+        "projectPath": "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.Domain\\Sale.Domain.csproj"
       },
       "frameworks": {
         "net472": {}
       }
     },
-    "C:\\Users\\b.khodakarami\\source\\repos\\Sale.Infrastructure\\Sale.Infrastructure.csproj": {
+    "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.Infrastructure\\Sale.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\b.khodakarami\\source\\repos\\Sale.Infrastructure\\Sale.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.Infrastructure\\Sale.Infrastructure.csproj",
         "projectName": "Sale.Infrastructure",
-        "projectPath": "C:\\Users\\b.khodakarami\\source\\repos\\Sale.Infrastructure\\Sale.Infrastructure.csproj",
+        "projectPath": "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.Infrastructure\\Sale.Infrastructure.csproj",
         "frameworks": {
           "net472": {
             "projectReferences": {
-              "C:\\Users\\b.khodakarami\\source\\repos\\Sale.Contract\\Sale.Contract.csproj": {
-                "projectPath": "C:\\Users\\b.khodakarami\\source\\repos\\Sale.Contract\\Sale.Contract.csproj"
+              "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.Contract\\Sale.Contract.csproj": {
+                "projectPath": "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.Contract\\Sale.Contract.csproj"
               },
-              "C:\\Users\\b.khodakarami\\source\\repos\\Sale.Domain\\Sale.Domain.csproj": {
-                "projectPath": "C:\\Users\\b.khodakarami\\source\\repos\\Sale.Domain\\Sale.Domain.csproj"
+              "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.Domain\\Sale.Domain.csproj": {
+                "projectPath": "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.Domain\\Sale.Domain.csproj"
               }
             }
           }

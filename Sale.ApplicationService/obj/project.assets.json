@@ -5932,7 +5932,7 @@
       ]
     },
     "Microsoft.CodeAnalysis.Analyzers/1.1.0": {
-      "sha512": "9U88KYpe+sfsKDt6vtmQ/4JCBJpVlDb6xXpdrHGZ7awrObr0r9k8mojAKVshv7MnosNa88vfY/4+b2K6f3W26A==",
+      "sha512": "HS3iRWZKcUw/8eZ/08GXKY2Bn7xNzQPzf8gRPHGSowX7u7XXu9i9YEaBeBNKUXWfI7qjvT2zXtLUvbN0hds8vg==",
       "type": "package",
       "path": "microsoft.codeanalysis.analyzers/1.1.0",
       "hasTools": true,
@@ -9732,7 +9732,7 @@
       ]
     },
     "System.Linq.Queryable/4.0.1": {
-      "sha512": "/zCkb2v1CLsdIIDMnRNuxpHFNsA/u0G57SbqC/oTJ4SqLdw/AfdLxOsXVK7WcQVGpR5n5ub9GvYWC6B+qTs8mA==",
+      "sha512": "Yn/WfYe9RoRfmSLvUt2JerP0BTGGykCZkQPgojaxgzF2N0oPo+/AhB8TXOpdCcNlrG3VRtsamtK2uzsp3cqRVw==",
       "type": "package",
       "path": "system.linq.queryable/4.0.1",
       "files": [
@@ -12607,23 +12607,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\b.khodakarami\\.nuget\\packages\\": {},
+    "C:\\Users\\Bita\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\b.khodakarami\\source\\repos\\Sale.ApplicationService\\Sale.ApplicationService.csproj",
+      "projectUniqueName": "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.ApplicationService\\Sale.ApplicationService.csproj",
       "projectName": "Sale.ApplicationService",
-      "projectPath": "C:\\Users\\b.khodakarami\\source\\repos\\Sale.ApplicationService\\Sale.ApplicationService.csproj",
-      "packagesPath": "C:\\Users\\b.khodakarami\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\b.khodakarami\\source\\repos\\Sale.ApplicationService\\obj\\",
+      "projectPath": "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.ApplicationService\\Sale.ApplicationService.csproj",
+      "packagesPath": "C:\\Users\\Bita\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.ApplicationService\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\b.khodakarami\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Bita\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -12636,17 +12636,17 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\b.khodakarami\\source\\repos\\Sale.Contract\\Sale.Contract.csproj": {
-              "projectPath": "C:\\Users\\b.khodakarami\\source\\repos\\Sale.Contract\\Sale.Contract.csproj"
+            "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.Contract\\Sale.Contract.csproj": {
+              "projectPath": "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.Contract\\Sale.Contract.csproj"
             },
-            "C:\\Users\\b.khodakarami\\source\\repos\\Sale.DomainService\\Sale.DomainService.csproj": {
-              "projectPath": "C:\\Users\\b.khodakarami\\source\\repos\\Sale.DomainService\\Sale.DomainService.csproj"
+            "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.DomainService\\Sale.DomainService.csproj": {
+              "projectPath": "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.DomainService\\Sale.DomainService.csproj"
             },
-            "C:\\Users\\b.khodakarami\\source\\repos\\Sale.Domain\\Sale.Domain.csproj": {
-              "projectPath": "C:\\Users\\b.khodakarami\\source\\repos\\Sale.Domain\\Sale.Domain.csproj"
+            "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.Domain\\Sale.Domain.csproj": {
+              "projectPath": "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.Domain\\Sale.Domain.csproj"
             },
-            "C:\\Users\\b.khodakarami\\source\\repos\\Sale.Infrastructure\\Sale.Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\b.khodakarami\\source\\repos\\Sale.Infrastructure\\Sale.Infrastructure.csproj"
+            "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.Infrastructure\\Sale.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\Bita\\Documents\\Projects\\Sale\\Sale.Infrastructure\\Sale.Infrastructure.csproj"
             }
           }
         }

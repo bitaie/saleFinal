@@ -6,13 +6,15 @@
     <title>@ViewData["Title"] - UI</title>
 
     <environment include="Development">
-        <link href="~/lib/datatable/css/addons/datatables.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
-    <link href="~/Custom template/layout/styles/tables.css" rel="stylesheet" />
-    <link href="~/Custom template/layout/styles/navi.css" rel="stylesheet" />
+        <link href="~/Custom template/layout/styles/tables.css" rel="stylesheet" />
+        <link href="~/Custom template/layout/styles/navi.css" rel="stylesheet" />
         <link href="~/Custom template/layout/styles/layout.css" rel="stylesheet" />
         <link href="~/Custom template/layout/styles/forms.css" rel="stylesheet" />
+        <link href="~/lib/datatable/css/addons/datatables.css" rel="stylesheet" />
         <link href="~/Custom template/layout/styles/featured_slide.css" rel="stylesheet" />
     </environment>
     <environment exclude="Development">
@@ -25,7 +27,7 @@
        
     
 </head>
-<body id="top">
+<body id="top" style="direction:rtl;  text-align:right ;" align="right">
     @*<nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -50,7 +52,7 @@
 
 
   
-        <div class="wrapper col0">
+        <div class="wrapper col0" style="direction:rtl;  text-align:right ;" align="right">
             @*<div id="topline">
                 <ul>
                     <li><a href="#">Libero</a></li>
@@ -73,26 +75,27 @@
         <!-- ####################################################################################################### -->
         <div class="wrapper col1">
             <div id="header">
-                <div id="topnav">
+                <div id="logo">
+                    <h1><a href="@Url.Action("Index", "Customers")"><strong>پروژه </strong>ی صورت حساب </a></h1>
+
+                </div>
+                <div id="topnav" style="direction:rtl;  text-align:right ;font-family:persian" align="right">
                     <ul>
                         @*<li class="last"><a href="#">Link text</a><span>Test Text Here</span></li>
-                        <li>
-                            <a href="#">DropDown</a><span>Test Text Here</span>
-                            <ul>
-                                <li><a href="#">Link 1</a></li>
-                                <li><a href="#">Link 2</a></li>
-                                <li><a href="#">Link 3</a></li>
-                            </ul>
-                        </li>*@
-                        <li><a href="@Url.Action("Index", "Customers")" style="font-family: Arial, Helvetica, sans-serif;">Customers</a></li>
-                        <li><a href="@Url.Action("Index", "Products")">Products</a></li>
-                        <li ><a href="@Url.Action("Index", "Invoices")">Invoices</a></li>
-                        </ul>
+                <li>
+                    <a href="#">DropDown</a><span>Test Text Here</span>
+                    <ul>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 3</a></li>
+                    </ul>
+                </li>*@
+                        <li><a href="@Url.Action("Index", "Customers")">مشتریان</a></li>
+                        <li><a href="@Url.Action("Index", "Products")">محصولات</a></li>
+                        <li><a href="@Url.Action("Index", "Invoices")">صورت حساب ها</a></li>
+                    </ul>
                 </div>
-                <div id="logo">
-                    <h1><a href="@Url.Action("Index", "Customers")"><strong>I</strong>nvoice <strong>P</strong>roject</a></h1>
-                    
-                </div>
+
                 <br class="clear" />
             </div>
         </div>
@@ -142,9 +145,9 @@
             </div>
         </div>*@
         <!-- ####################################################################################################### -->
-        <div class="wrapper col3">
+        <div class="wrapper col3 " style="direction:rtl;  text-align:right  "align="right">
             <div class="container">
-                <div class="content">
+                <div class="content col-md-pull-10" style="   ">
 
                     @RenderBody()
 
@@ -154,13 +157,13 @@
             </div>
             </div>
             <!-- ####################################################################################################### -->
-            <div class="wrapper col4">
+            <div class="wrapper col4" style="direction:rtl;  text-align:right; font-family:persian "align="right">
                 <div id="footer">
                     <div class="box1">
-                        <h2>A Little Project Information !</h2>
+                        <h2 style="font-family:persian">هدف این پروژه سازمان دهی مشتریان، محصولات و ایجاد صورت حساب است.</h2>
                         @*<img class="imgl" src="images/demo/imgl.gif" alt="" />*@
-                        <p>We can define Products and Customers...</p>
-                        <p>THEN we can add Invoice to Our Customer </p>
+                        <p>ابتدا مشتریان و محصولات موجود را تعریف کنید...</p>
+                        <p>سپس برای هر مشتری صورت حساب ایجاد کنید. </p>
                     </div>
                     @*<div class="box contactdetails">
                         <h2>Our Contact Details !</h2>
