@@ -30,6 +30,7 @@ namespace Sale.FrontEnd.Areas.Identity.Pages.Account
         {
             [Required]
             [EmailAddress]
+            [Display(Name = "ایمیل")]
             public string Email { get; set; }
         }
 

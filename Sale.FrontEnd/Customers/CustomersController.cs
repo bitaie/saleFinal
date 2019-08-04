@@ -13,17 +13,24 @@ using System.Text;
 using Sale.Domain.Customers;
 using System.Net;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 
 namespace Sale.FrontEnd.Customers
 {
-    [Authorize]
+    [Authorize(Roles ="CustomerManager")]
     public class CustomersController : Controller
     {
         ApiInitializer _initializer = new ApiInitializer();
+        private RoleManager<IdentityRole> roleManager;
+        public CustomersController(RoleManager<IdentityRole> _roleManager)
+        {
+            roleManager = _roleManager;
+        }
         // GET: Customers
-        [Authorize]
+        [AllowAnonymous]
         public async Task<ActionResult> Index()
         {
+         
             List<Customer> customers = new List<Customer>();
             HttpClient client = _initializer.initial();
             HttpResponseMessage response = await client.GetAsync("api/Customers");

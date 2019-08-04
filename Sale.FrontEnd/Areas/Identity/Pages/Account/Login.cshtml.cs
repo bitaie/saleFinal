@@ -13,7 +13,6 @@ using Microsoft.Extensions.Logging;
 namespace Sale.FrontEnd.Areas.Identity.Pages.Account
 {
     [AllowAnonymous]
-    [Route("Account")]
     public class LoginModel : PageModel
     {
         private readonly SignInManager<IdentityUser> _signInManager;
@@ -37,15 +36,17 @@ namespace Sale.FrontEnd.Areas.Identity.Pages.Account
 
         public class InputModel
         {
-            [Required]
-            [EmailAddress]
+            [Required(ErrorMessage = "وارد کردن ایمیل ضروری است.")]
+            [EmailAddress(ErrorMessage = "ایمیل وارد شده معتبر نیست.")]
+            [Display(Name = "ایمیل")]
             public string Email { get; set; }
 
-            [Required]
+            [Required(ErrorMessage = "وارد کردن رمز عبور ضروری است.")]
             [DataType(DataType.Password)]
+            [Display(Name = "رمز عبور")]
             public string Password { get; set; }
 
-            [Display(Name = "Remember me?")]
+            [Display(Name = "مرا به خاطر بسپار")]
             public bool RememberMe { get; set; }
         }
 
@@ -91,7 +92,7 @@ namespace Sale.FrontEnd.Areas.Identity.Pages.Account
                 }
                 else
                 {
-                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                    ModelState.AddModelError(string.Empty, "رمز وارد شده صحیح نیست.");
                     return Page();
                 }
             }
@@ -99,5 +100,6 @@ namespace Sale.FrontEnd.Areas.Identity.Pages.Account
             // If we got this far, something failed, redisplay form
             return Page();
         }
+       
     }
 }

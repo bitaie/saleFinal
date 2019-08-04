@@ -8,12 +8,12 @@ namespace Sale.FrontEnd.ViewModels
 {
     public class RegisterViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "وارد کردن ایمیل ضروری است.")]
         public string UserName { get; set; }
-        [Required]
+        [Required(ErrorMessage = "وارد کردن رمز عبور ضروری است.")]
         public string Password { get; set; }
-        [Required]
-        [Compare("Password")]
+        [Required(ErrorMessage = "وارد کردن تکرار رمز عبور ضروری است.")]
+        [Compare("Password", ErrorMessage = "رمز عبور و تکرار آن با هم متفاوت هستند.")]
         public string ConfirmPassword { get; set; }
     }
 }

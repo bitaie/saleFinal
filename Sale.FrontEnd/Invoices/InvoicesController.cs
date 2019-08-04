@@ -16,9 +16,11 @@ using Sale.Domain.Invoices;
 using Sale.Domain.Products;
 using Sale.Domain.Customers;
 using Sale.Domain.Dto;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Sale.FrontEnd.Invoices
 {
+    [Authorize(Roles = "InvoiceMnager")]
     public class InvoicesController : Controller
     {
         ApiInitializer _initializer = new ApiInitializer();

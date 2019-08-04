@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Proxies;
+
 
 namespace Sale.FrontEnd.Areas.Identity.Data
 {
@@ -13,6 +15,7 @@ namespace Sale.FrontEnd.Areas.Identity.Data
         public IdentityDataContext(DbContextOptions<IdentityDataContext> options)
             : base(options)
         {
+         //   Microsoft.EntityFrameworkCore.Proxies.Internal.LazyLoadingInterceptor .Configuration.LazyLoadingEnabled = false;
         }
 
         protected override void OnModelCreating(ModelBuilder builder)

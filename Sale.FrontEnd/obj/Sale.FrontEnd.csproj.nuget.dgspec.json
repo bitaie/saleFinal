@@ -79,10 +79,6 @@
       "frameworks": {
         "netcoreapp2.1": {
           "dependencies": {
-            "Microsoft.AspNet.Identity.Core": {
-              "target": "Package",
-              "version": "[2.2.2, )"
-            },
             "Microsoft.AspNetCore.App": {
               "suppressParent": "All",
               "target": "Package",
@@ -94,6 +90,22 @@
               "target": "Package",
               "version": "[2.1.2, )"
             },
+            "Microsoft.AspNetCore.Razor.Language": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Proxies": {
+              "target": "Package",
+              "version": "[2.1.1, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.NETCore.App": {
               "target": "Package",
               "version": "[2.1.0, )",
@@ -101,7 +113,7 @@
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[2.1.9, )"
+              "version": "[2.2.3, )"
             },
             "bootstrap": {
               "target": "Package",

@@ -21,7 +21,14 @@ namespace Sale.FrontEnd.Areas.Identity
 
                 services.AddDefaultIdentity<IdentityUser>()
                     .AddEntityFrameworkStores<IdentityDataContext>();
+
+
+
             });
         }
     }
+
+
+   
+
 }

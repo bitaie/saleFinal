@@ -136,7 +136,7 @@ Write(Html.ActionLink("تغییر", "Edit", new {  id = Model.Id }));
             WriteLiteral(" |\r\n    ");
             EndContext();
             BeginContext(1629, 48, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b1b84606461b49f6915119290daa72ff", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "70fc57a313e04a9087a30215af4b92d8", async() => {
                 BeginContext(1651, 22, true);
                 WriteLiteral("بازگشت به لیست محصولات");
                 EndContext();

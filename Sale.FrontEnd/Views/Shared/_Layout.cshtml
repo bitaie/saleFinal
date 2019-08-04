@@ -82,18 +82,30 @@
                 <div id="topnav" style="direction:rtl;  text-align:right ;font-family:persian" align="right">
                     <ul>
                         @*<li class="last"><a href="#">Link text</a><span>Test Text Here</span></li>
-                <li>
-                    <a href="#">DropDown</a><span>Test Text Here</span>
-                    <ul>
-                        <li><a href="#">Link 1</a></li>
-                        <li><a href="#">Link 2</a></li>
-                        <li><a href="#">Link 3</a></li>
-                    </ul>
-                </li>*@
-                        <li><a href="@Url.Action("Index", "Customers")">مشتریان</a></li>
-                        <li><a href="@Url.Action("Index", "Products")">محصولات</a></li>
-                        <li><a href="@Url.Action("Index", "Invoices")">صورت حساب ها</a></li>
-                    </ul>
+        <li>
+            <a href="#">DropDown</a><span>Test Text Here</span>
+            <ul>
+                <li><a href="#">Link 1</a></li>
+                <li><a href="#">Link 2</a></li>
+                <li><a href="#">Link 3</a></li>
+            </ul>
+        </li>*@
+                        <li><a href="/account/register" )"> ثبت نام</a></li>
+                        <li><a href="/account/login">ورود</a></li>
+                        <li><a href="/account/logout" )">خروج</a></li>
+                        @if (User.IsInRole("CustomerManager"))
+                        {
+                            <li><a href="@Url.Action("Index", "Customers")">مشتریان</a></li>
+                        }
+                        @if (User.IsInRole("ProductManager"))
+                        {
+                            <li><a href="@Url.Action("Index", "Products")">محصولات</a></li>
+                        }
+                        @if (User.IsInRole("InvoiceManager"))
+                        {
+                            <li><a href="@Url.Action("Index", "Invoices")">صورت حساب ها</a></li>
+                        }
+                        </ul>
                 </div>
 
                 <br class="clear" />

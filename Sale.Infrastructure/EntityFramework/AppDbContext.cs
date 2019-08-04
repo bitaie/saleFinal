@@ -20,6 +20,7 @@ namespace Sale.Infrastructure.EntityFramework
         {
             //options.UseSqlServer(connection, b => b.MigrationsAssembly("Sale.ApplicationService"));
 
+           // this.Configuration.LazyLoadingEnabled = false;
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

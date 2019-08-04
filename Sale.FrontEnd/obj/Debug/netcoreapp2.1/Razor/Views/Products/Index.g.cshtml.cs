@@ -117,7 +117,7 @@ using UI.Models;
             WriteLiteral("    <p>\r\n        ");
             EndContext();
             BeginContext(1445, 43, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6587e1d29d594c11897571aee5d47e4c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4207c85b91064e2e9d6a249619bb66ab", async() => {
                 BeginContext(1468, 16, true);
                 WriteLiteral("ایجاد محصول جدید");
                 EndContext();

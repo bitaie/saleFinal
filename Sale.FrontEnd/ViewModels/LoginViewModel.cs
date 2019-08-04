@@ -8,11 +8,12 @@ namespace Sale.FrontEnd.ViewModels
 {
     public class LoginViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "وارد کردن ایمیل ضروری است.")]
         public string UserName { get; set; }
-        [Required]
+        [Required(ErrorMessage = "وارد کردن رمز عبور ضروری است.")]
+
         public string Password { get; set; }
-        [Required]
+        
         public bool RememberMe { get; set; }
     }
 }

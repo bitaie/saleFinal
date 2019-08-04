@@ -11,16 +11,26 @@ using Newtonsoft.Json;
 using System.Net.Http.Headers;
 using System.Text;
 using Sale.Domain.Products;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+
 
 namespace Sale.FrontEnd.Products
 {
+    [Authorize]
     public class ProductsController : Controller
     {
+  
         ApiInitializer _initializer = new ApiInitializer();
+    
+
         // GET: Products
+
+        //[AllowAnonymous]
         public async Task<ActionResult> Index()
         {
-            List<Product> Products = new List<Product>();
+            var test=User.IsInRole("4");
+            List <Product> Products = new List<Product>();
             HttpClient client = _initializer.initial();
             HttpResponseMessage response = await client.GetAsync("api/Products");
             if (response.IsSuccessStatusCode)
@@ -40,6 +50,7 @@ namespace Sale.FrontEnd.Products
         }
 
         // GET: Products/Details/5
+        [Authorize(Roles ="admin")]
         public async Task<ActionResult> Details(int id)
         {
          
