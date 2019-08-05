@@ -21,16 +21,15 @@ namespace Sale.FrontEnd.Customers
     public class CustomersController : Controller
     {
         ApiInitializer _initializer = new ApiInitializer();
-        private RoleManager<IdentityRole> roleManager;
-        public CustomersController(RoleManager<IdentityRole> _roleManager)
-        {
-            roleManager = _roleManager;
-        }
+      
+     
         // GET: Customers
         [AllowAnonymous]
         public async Task<ActionResult> Index()
         {
-         
+
+
+            var test = User.IsInRole("4");
             List<Customer> customers = new List<Customer>();
             HttpClient client = _initializer.initial();
             HttpResponseMessage response = await client.GetAsync("api/Customers");

@@ -19,8 +19,12 @@ namespace Sale.FrontEnd.Areas.Identity
                     options.UseSqlServer(
                         context.Configuration.GetConnectionString("IdentityDataContextConnection")));
 
-                services.AddDefaultIdentity<IdentityUser>()
-                    .AddEntityFrameworkStores<IdentityDataContext>();
+                services.AddIdentity<IdentityUser, IdentityRole>()
+         .AddRoleManager<RoleManager<IdentityRole>>()
+         .AddDefaultUI()
+         .AddDefaultTokenProviders()
+         .AddEntityFrameworkStores<IdentityDataContext>();
+
 
 
 

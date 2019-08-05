@@ -290,7 +290,7 @@ Write(Html.ActionLink("تغییر", "Edit", new { id = Model.Id }));
             WriteLiteral(" |\r\n    ");
             EndContext();
             BeginContext(3016, 53, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5c9833a9155e48e181da9fd5c43af90f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6d92e04123704f81a20bfc7aa8f6e6d9", async() => {
                 BeginContext(3038, 27, true);
                 WriteLiteral("بازگشت به لیست صورت حساب ها");
                 EndContext();

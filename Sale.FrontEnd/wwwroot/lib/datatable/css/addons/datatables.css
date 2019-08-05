@@ -173,3 +173,6 @@ div#dtBasicExample_info {
 div#dtBasicExample_length {
     float: left;
 }
+#header{
+    background:black !important
+}

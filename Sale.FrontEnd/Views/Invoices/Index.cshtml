@@ -58,36 +58,42 @@
                 <th>
                     @Html.DisplayNameFor(model => model.TotalPrice)
                 </th>
-                <th></th>
-            </tr>
+                @if (User.IsInRole("InvoiceManager"))
+                {
+                    <th></th>
+                }
+                </tr>
         </thead>
         <tbody>
             @foreach (var item in Model)
             {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Id)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.AddedDate)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ModifiedDate)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Customer.FirstName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Customer.LastName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.TotalPrice)
-                    </td>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AddedDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ModifiedDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Customer.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Customer.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalPrice)
+                </td>
+                @if (User.IsInRole("InvoiceManager"))
+                {
                     <td>
                         @Html.ActionLink("تغییر", "Edit", new { id = item.Id }) |
                         @Html.ActionLink("جزئیات", "Details", new { id = item.Id }) |
                         <a href="#myModal" class="trigger-btn" data-toggle="modal" data-whatever="@item.Id">حذف</a>
                     </td>
+                }
                 </tr>
             }
         </tbody>

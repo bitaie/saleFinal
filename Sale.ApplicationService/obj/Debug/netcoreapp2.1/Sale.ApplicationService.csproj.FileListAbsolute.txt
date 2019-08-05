@@ -48,13 +48,13 @@ C:\Users\Bita\Documents\Projects\Sale\Sale.ApplicationService\obj\Debug\netcorea
 C:\Users\Bita\Documents\Projects\Sale\Sale.ApplicationService\obj\Debug\netcoreapp2.1\Sale.ApplicationService.csproj.CopyComplete
 C:\Users\Bita\Documents\Projects\Sale\Sale.ApplicationService\obj\Debug\netcoreapp2.1\Sale.ApplicationService.dll
 C:\Users\Bita\Documents\Projects\Sale\Sale.ApplicationService\obj\Debug\netcoreapp2.1\Sale.ApplicationService.pdb
+C:\Users\b.khodakarami\Documents\Projects\saleFinal\Sale.ApplicationService\bin\Debug\netcoreapp2.1\Sale.ApplicationService.dll
+C:\Users\b.khodakarami\Documents\Projects\saleFinal\Sale.ApplicationService\bin\Debug\netcoreapp2.1\Sale.Contract.dll
+C:\Users\b.khodakarami\Documents\Projects\saleFinal\Sale.ApplicationService\bin\Debug\netcoreapp2.1\Sale.Domain.dll
 C:\Users\b.khodakarami\Documents\Projects\saleFinal\Sale.ApplicationService\bin\Debug\netcoreapp2.1\Sale.ApplicationService.deps.json
 C:\Users\b.khodakarami\Documents\Projects\saleFinal\Sale.ApplicationService\bin\Debug\netcoreapp2.1\Sale.ApplicationService.runtimeconfig.json
 C:\Users\b.khodakarami\Documents\Projects\saleFinal\Sale.ApplicationService\bin\Debug\netcoreapp2.1\Sale.ApplicationService.runtimeconfig.dev.json
-C:\Users\b.khodakarami\Documents\Projects\saleFinal\Sale.ApplicationService\bin\Debug\netcoreapp2.1\Sale.ApplicationService.dll
 C:\Users\b.khodakarami\Documents\Projects\saleFinal\Sale.ApplicationService\bin\Debug\netcoreapp2.1\Sale.ApplicationService.pdb
-C:\Users\b.khodakarami\Documents\Projects\saleFinal\Sale.ApplicationService\bin\Debug\netcoreapp2.1\Sale.Contract.dll
-C:\Users\b.khodakarami\Documents\Projects\saleFinal\Sale.ApplicationService\bin\Debug\netcoreapp2.1\Sale.Domain.dll
 C:\Users\b.khodakarami\Documents\Projects\saleFinal\Sale.ApplicationService\bin\Debug\netcoreapp2.1\Sale.DomainService.dll
 C:\Users\b.khodakarami\Documents\Projects\saleFinal\Sale.ApplicationService\bin\Debug\netcoreapp2.1\Sale.Infrastructure.dll
 C:\Users\b.khodakarami\Documents\Projects\saleFinal\Sale.ApplicationService\bin\Debug\netcoreapp2.1\Sale.Contract.pdb

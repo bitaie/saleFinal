@@ -34,7 +34,7 @@ namespace Sale.FrontEnd.Areas.Identity.Pages.Account
 
         public string LoginProvider { get; set; }
 
-        public string ReturnUrl { get; set; }
+        public string ReturnUrl { get; set; } 
 
         [TempData]
         public string ErrorMessage { get; set; }

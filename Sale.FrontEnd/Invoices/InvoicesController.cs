@@ -20,11 +20,12 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace Sale.FrontEnd.Invoices
 {
-    [Authorize(Roles = "InvoiceMnager")]
+    [Authorize(Roles = "InvoiceManager")]
     public class InvoicesController : Controller
     {
         ApiInitializer _initializer = new ApiInitializer();
         // GET: Invoices
+        
         public async Task<ActionResult> Index()
         {
 

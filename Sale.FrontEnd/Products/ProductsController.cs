@@ -17,7 +17,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace Sale.FrontEnd.Products
 {
-    [Authorize]
+    [Authorize(Roles ="ProductManager")]
     public class ProductsController : Controller
     {
   
@@ -26,7 +26,8 @@ namespace Sale.FrontEnd.Products
 
         // GET: Products
 
-        //[AllowAnonymous]
+        [AllowAnonymous]
+
         public async Task<ActionResult> Index()
         {
             var test=User.IsInRole("4");
@@ -50,7 +51,7 @@ namespace Sale.FrontEnd.Products
         }
 
         // GET: Products/Details/5
-        [Authorize(Roles ="admin")]
+       
         public async Task<ActionResult> Details(int id)
         {
          

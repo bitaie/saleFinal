@@ -93,18 +93,14 @@
                         <li><a href="/account/register" )"> ثبت نام</a></li>
                         <li><a href="/account/login">ورود</a></li>
                         <li><a href="/account/logout" )">خروج</a></li>
-                        @if (User.IsInRole("CustomerManager"))
-                        {
+                       
                             <li><a href="@Url.Action("Index", "Customers")">مشتریان</a></li>
-                        }
-                        @if (User.IsInRole("ProductManager"))
-                        {
+                        
+                       
                             <li><a href="@Url.Action("Index", "Products")">محصولات</a></li>
-                        }
-                        @if (User.IsInRole("InvoiceManager"))
-                        {
+                       
                             <li><a href="@Url.Action("Index", "Invoices")">صورت حساب ها</a></li>
-                        }
+                        
                         </ul>
                 </div>
 
